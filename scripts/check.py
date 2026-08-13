@@ -9,7 +9,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skill" / "repo-cover"
-TEXT_SUFFIXES = {".md", ".yaml", ".yml", ".py", ".mjs", ".txt"}
+TEXT_SUFFIXES = {
+    ".json",
+    ".md",
+    ".mjs",
+    ".py",
+    ".svg",
+    ".toml",
+    ".txt",
+    ".xml",
+    ".yaml",
+    ".yml",
+}
 TEXT_NAMES = {".gitattributes", ".gitignore", "LICENSE"}
 
 
