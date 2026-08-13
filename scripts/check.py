@@ -5,6 +5,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +23,24 @@ TEXT_SUFFIXES = {
     ".yml",
 }
 TEXT_NAMES = {".gitattributes", ".gitignore", "LICENSE"}
+EXPECTED_EXAMPLES = {
+    "audiotrim.png",
+    "beat.png",
+    "deskmochi.png",
+    "justgoal-skill.png",
+    "knot.png",
+    "littlepng.png",
+    "ping.png",
+    "prismdraft.png",
+}
+REQUIRED_REFERENCES = {
+    "cold-start.md",
+    "common-quality.md",
+    "design-ledger-template.md",
+    "design-recipes.md",
+    "source-material.md",
+    "version-regression.md",
+}
 
 
 def fail(message: str) -> None:
@@ -53,6 +72,26 @@ def check_metadata() -> None:
             fail(f"agents/openai.yaml is missing {expected!r}")
 
 
+def check_skill_references() -> None:
+    references = SKILL / "references"
+    actual = {path.name for path in references.glob("*.md")}
+    missing = REQUIRED_REFERENCES - actual
+    if missing:
+        fail(f"Missing required skill references: {', '.join(sorted(missing))}")
+
+    markdown_link = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
+    for source in [SKILL / "SKILL.md", *sorted(references.glob("*.md"))]:
+        text = source.read_text(encoding="utf-8")
+        for raw_target in markdown_link.findall(text):
+            target = raw_target.strip().strip("<>")
+            if not target or target.startswith(("#", "http://", "https://", "mailto:")):
+                continue
+            relative_target = unquote(target.split("#", 1)[0])
+            resolved = (source.parent / relative_target).resolve()
+            if not resolved.exists():
+                fail(f"Broken relative Markdown link in {source.relative_to(ROOT)}: {target}")
+
+
 def check_sources() -> None:
     for path in ROOT.rglob("*.py"):
         if ".git" not in path.parts:
@@ -66,9 +105,13 @@ def check_sources() -> None:
 def check_images() -> None:
     validator = SKILL / "scripts" / "validate_preview.py"
     images = sorted((ROOT / "examples").glob("*.png"))
+    actual_examples = {image.name for image in images}
+    if actual_examples != EXPECTED_EXAMPLES:
+        fail(
+            "Example image set mismatch: "
+            f"expected {sorted(EXPECTED_EXAMPLES)}, got {sorted(actual_examples)}"
+        )
     images.append(ROOT / "docs" / "social-preview.png")
-    if len(images) != 5:
-        fail(f"Expected four examples and one product preview; got {len(images)} images")
 
     results = []
     for image in images:
@@ -101,9 +144,13 @@ def check_images() -> None:
 def main() -> None:
     check_utf8_without_bom()
     check_metadata()
+    check_skill_references()
     check_sources()
     check_images()
-    print("RepoCover checks passed: metadata, UTF-8, syntax, and 5 preview images.")
+    print(
+        "RepoCover checks passed: metadata, skill references, UTF-8, syntax, "
+        f"and {len(EXPECTED_EXAMPLES) + 1} preview images."
+    )
 
 
 if __name__ == "__main__":

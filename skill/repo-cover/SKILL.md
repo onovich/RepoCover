@@ -1,142 +1,154 @@
 ---
 name: repo-cover
-description: RepoCover creates or refreshes polished GitHub repository social preview images with project-specific visual language, an editable source, exact 1280×640 output, a compressed raster under GitHub's 1 MB limit, and optional upload verification. Use when the user asks for a GitHub social preview, repository Open Graph or OG image, link-share card, GitHub Settings preview image, or an improvement to how a repository looks when shared.
+description: RepoCover audits local or remote GitHub repositories for cover-worthiness and creates or refreshes polished social preview images with project-specific visual language, an editable source, exact 1280×640 output, a compressed raster under GitHub's 1 MB limit, and optional upload verification. Use when the user asks to triage a repository portfolio, screen empty or abandoned projects, generate a preview without cloning or without existing visual assets, create a GitHub social preview, repository Open Graph or OG image, link-share card, or improve how a repository looks when shared.
 ---
 
 # RepoCover
 
-Create a repository-specific social preview that remains legible at thumbnail size. Prefer a deterministic vector composition over a generic AI-generated banner.
+Create a repository-specific social preview that remains legible at thumbnail size. Prefer deterministic, editable composition over a generic generated banner.
 
-## Core requirements
+## Product invariants
 
-- Deliver an exact `1280×640` raster; use PNG by default.
-- Keep the raster under `1,000,000` bytes.
-- Use a solid background unless transparency is an intentional, tested requirement.
+- Deliver an exact `1280×640` raster, normally PNG, under `1,000,000` bytes.
 - Keep an editable source, normally SVG, beside the raster.
-- Use only verified product claims, screenshots, metrics, and features.
-- Preserve the repository's own identity instead of applying one house style to every project.
-- Make every visible element reinforce the primary promise or one selected proof point. A factual repository feature can still be irrelevant to the preview.
+- Ground visible claims, metrics, screenshots, and proof in repository evidence.
+- Preserve the repository's identity instead of imposing one house style.
+- Validate full size and `320×160` on light and dark surroundings.
+- Treat image creation and GitHub upload as separate authorization boundaries.
+- Do not imply GitHub affiliation or endorsement.
 
-Before designing, read [`references/design-recipes.md`](references/design-recipes.md) completely.
+## Load the right references
+
+Read these two files for every cover:
+
+- [`references/common-quality.md`](references/common-quality.md) for universal composition and rejection gates.
+- [`references/design-ledger-template.md`](references/design-ledger-template.md) for the evidence, design, and validation record.
+
+Then read only the route that applies:
+
+- Read [`references/source-material.md`](references/source-material.md) when screenshots, runtime captures, logos, illustrations, SVGs, sprites, textures, or other meaningful visuals exist.
+- Read [`references/cold-start.md`](references/cold-start.md) when no usable screenshot, runtime capture, brand mark, or repository-owned primary visual exists.
+- Read [`references/version-regression.md`](references/version-regression.md) when refreshing an existing cover, comparing candidates, or generating a versioned batch.
+
+Do not load an irrelevant route merely because it exists. `references/design-recipes.md` is only a compatibility index for older prompts.
 
 ## Workflow
 
-### 1. Inspect the repository
+### 1. Inspect and bound the evidence
 
-Read applicable `AGENTS.md` files, the README, package metadata, existing logos, screenshots, design tokens, generated graphics, and any current social-preview asset. Identify:
+Read applicable `AGENTS.md` files, the README, package metadata, meaningful source paths, visual assets, and any existing social preview. Identify:
 
-- repository name;
-- the primary user task and product promise;
+- repository name and primary user task;
 - one concrete value statement;
 - at most three proof points;
-- the strongest real product visual;
-- the established palette, typography, spacing, and shape language;
-- secondary facts to exclude because they would distract from the primary promise.
+- the strongest product evidence;
+- established visual identity and secondary facts to exclude;
+- evidence mode: `remote-static`, `local-static`, `build-tested`, or `runtime-tested`.
 
-If GitHub's image requirements might have changed, verify them against official GitHub documentation before working.
+Never imply that a build, runtime, scene, or test was executed when only static evidence was inspected. If GitHub's image requirements might have changed, verify them against official GitHub documentation.
 
-### 2. Choose the production route
+#### Remote-only repositories
 
-Use the smallest route that preserves the product's identity:
+- Prefer an authenticated GitHub connector for private repositories; use public pages, APIs, and raw URLs for public evidence.
+- Inspect the default-branch tree, README, manifests, meaningful source files, current preview, and only the strongest assets needed for proof.
+- Download specific evidence assets rather than cloning or downloading an archive when the user requests remote-only work.
+- Keep remote outputs in a durable user-facing directory and record source URLs and claim boundaries.
+- Report evidence limitations instead of inventing a message or visual.
 
-- **Code-native SVG — preferred:** use for developer tools, charts, diagrams, logos, and repositories with an existing vector or UI system.
-- **Screenshot hybrid:** crop a real product screenshot and place exact vector typography around it. Do not redraw a usable screenshot with AI.
-- **Illustration hybrid:** use image generation only when illustration is central to the product identity. Generate artwork without important text, then overlay all wording in SVG.
+#### Portfolio triage
 
-When an established vector system exists, do not invoke image generation merely to imitate it.
+Before bulk generation, inventory the accessible repositories and record visibility, archived/fork status, purpose, maturity, authored evidence, existing cover status, and confidence.
 
-### 3. Define the message
+Classify each repository for user confirmation:
 
-Before drawing, write a compact content ledger:
+- **Skip: empty or boilerplate:** no coherent authored product or content.
+- **Skip: extremely incomplete:** too little implementation to demonstrate a useful promise.
+- **Candidate:** clear purpose plus enough authored evidence to promote honestly.
+- **Already covered:** a valid current cover exists; retain it for confirmation instead of regenerating automatically.
 
-- **Promise:** the one outcome the image must communicate.
-- **Proof:** the one product artifact and up to three facts that support it.
-- **Exclude:** true but secondary features, integrations, or implementation details that must not appear.
+For Unity repositories, discount default `Packages`, `ProjectSettings`, starter scenes, generated metadata, and untouched starter assets. Look for authored scripts, substantive scene or prefab changes, original assets or data, tests, packages, documentation, or a working sample. Treat age, forks, templates, and archived status as evidence, not automatic verdicts.
 
-If a visible element cannot be mapped to the promise or proof list, remove it.
+Return a plain-language one-line explanation for every repository, including skipped ones, and obtain confirmation before mass generation.
 
-Use this hierarchy:
+### 2. Write the ledger and choose the route
 
-1. Repository name.
-2. One short, concrete value statement.
-3. Two or three short proof points when they add information.
-4. Optional repository URL or quiet brand signature.
+Create a design ledger from the bundled template before drawing. At minimum record:
 
-Avoid feature inventories, installation instructions, badges, star counts, and claims that are not proven by repository evidence.
+- **Promise, proof, exclude**;
+- evidence mode and claim boundaries;
+- source-material diagnosis or cold-start semantic skeleton;
+- chosen production and interpretation route;
+- material, asset-role, topology, and line decisions;
+- output version, validation, and promotion verdict when applicable.
 
-### 4. Build the editable source
+Choose the smallest production route that preserves identity:
 
-Default to `docs/social-preview.svg` and `docs/social-preview.png` unless the repository already has a clear asset convention or the user names a destination.
+- **Code-native SVG — preferred:** developer tools, diagrams, charts, logos, libraries, and inferred visual systems.
+- **Screenshot or source hybrid:** only when a self-contained source artifact remains the clearest proof after diagnosis.
+- **Illustration hybrid:** only when illustration is central to the repository's identity; generate artwork without important text and overlay exact wording in SVG.
 
-- Use `apply_patch` for project files.
+Do not invoke image generation merely to imitate an established vector system.
+
+### 3. Build and version the editable source
+
+Default to `docs/social-preview.svg` and `docs/social-preview.png` unless the repository has a clear asset convention or the user names another destination.
+
 - Use a `1280 640` viewBox and a full-canvas background.
 - Keep essential content inside a roughly 72 px outer safe area.
-- Partition copy, product proof, captions, and the quiet signature into explicit non-overlapping regions before adding detail.
-- Use system font stacks unless the repository already ships an appropriate licensed font.
-- Embed local visual evidence or reproduce it with deterministic SVG primitives.
-- Avoid external image, font, filter, or stylesheet dependencies.
-- Clip charts, waveforms, screenshots, and repeated marks to their panel or plot bounds. Keep peak marks inside roughly 70–80% of plot height unless the underlying data requires a different scale.
-- Preserve an existing asset or create a versioned sibling unless replacement is requested.
+- Partition copy, product proof, captions, and signature into non-overlapping regions.
+- Use system fonts unless the repository ships an appropriate licensed font.
+- Embed local evidence or reproduce it with deterministic SVG primitives; avoid external runtime dependencies.
+- Clip charts, screenshots, repeated marks, and waveforms to their owning regions.
+- Preserve an existing cover and create a versioned sibling unless replacement is explicitly requested.
 
-### 5. Render the raster
+### 4. Render and validate mechanically
 
-Use the bundled renderer when Sharp is available:
+Render with the bundled script when Sharp is available:
 
 ```text
 node <skill-directory>/scripts/render_svg.mjs <source.svg> <output.png>
 ```
 
-Add `--force` only when replacing the named raster is in scope. If Sharp is not directly importable, locate the configured workspace dependencies and set `NODE_PATH` to their Node package directory. Do not install a new dependency without permission.
+Use `--force` only when replacing the named output is in scope. In Codex Desktop, load workspace dependencies and use the returned Node executable and package path through `NODE_PATH`; do not install a dependency without permission.
 
-In Codex Desktop, call `codex_app__load_workspace_dependencies` and use the returned **Node.js packages** path as `NODE_PATH`, then run the returned Node.js executable. Outside Codex Desktop, prefer a project-provided Sharp installation or another already available trusted SVG renderer.
-
-### 6. Validate mechanically
-
-Run:
+Validate the PNG and SVG:
 
 ```text
 python <skill-directory>/scripts/validate_preview.py <output.png> --svg <source.svg>
 ```
 
-On Windows environments whose Python defaults to a legacy code page, set `PYTHONUTF8=1` for skill tooling that reads the UTF-8 Markdown or SVG source.
-
-The validator checks the raster signature, exact dimensions, file-size limit, and the SVG canvas and accessible title/description.
-
-Create the standard thumbnail review sheet:
+Create the standard thumbnail sheet:
 
 ```text
 node <skill-directory>/scripts/create_review_sheet.mjs <preview.png> <review.png>
 ```
 
-The sheet shows the exact `320×160` preview on both light and dark surroundings. Add `--force` only when replacing the review artifact is in scope.
+On Windows legacy code pages, set `PYTHONUTF8=1` for tooling that reads UTF-8 source.
 
-### 7. Validate visually
+### 5. Validate visually
 
-Inspect the final raster with the local image viewer at full size and as a small thumbnail. Confirm:
+Inspect the raster at full size and inspect the generated review sheet. Confirm:
 
-- repository name and value statement are readable at about `320×160`;
-- the product visual remains recognizable;
-- all text is exact and uncropped;
-- contrast, alignment, spacing, and visual weight are intentional;
-- no corner, circle, chart, or screenshot is accidentally clipped;
-- no text block, caption, URL, chart mark, or decoration collides with another region;
-- every secondary element is relevant to the primary product promise rather than merely present in the repository;
-- charts retain quiet internal margins and do not use exaggerated peaks that overpower their panel;
-- the result still looks correct on both light and dark surrounding pages.
+- repository name and value statement remain readable at `320×160`;
+- the product proof is recognizable and technically faithful;
+- text, marks, crops, panels, and decorative elements do not collide or clip;
+- the composition works on light and dark surroundings;
+- every visible element maps to the promise or proof;
+- the design passes every applicable route-specific veto.
 
-Inspect both the full raster and the generated review sheet. Scan the canvas left-to-right and top-to-bottom for collisions, then compare visual weight at thumbnail size. Iterate on one concrete issue at a time, rerender, rerun the validator, and rebuild the review sheet. Do not hand off a known visual defect.
+Scan left-to-right and top-to-bottom, fix one named defect at a time, rerender, and rerun validation. Do not hand off a known defect.
 
-### 8. Upload only when requested
+For batches, create a contact sheet and inspect for accidental shared-template drift before promoting candidates.
 
-Creating the asset does not authorize changing GitHub settings. When upload is requested, open:
+### 6. Upload only when requested
+
+Creating an asset does not authorize changing GitHub settings. When upload is explicitly requested, open:
 
 ```text
 https://github.com/<owner>/<repo>/settings
 ```
 
-Use **Social preview → Edit → Upload an image…**. Current GitHub UI may save immediately once the preview appears and leave only an **Edit** button. Follow the active UI confirmation policy for the file upload.
-
-After upload, fetch the public repository page and verify that `og:image` resolves to the new `1280×640` image. Do not report success from the settings-page thumbnail alone.
+Use **Social preview → Edit → Upload an image…** and follow the active UI confirmation policy. After upload, fetch the public repository page and verify that `og:image` resolves to the new `1280×640` image. Do not report success from the settings thumbnail alone.
 
 ## Handoff
 
@@ -144,7 +156,8 @@ Show the final image and report:
 
 - editable source path;
 - raster path, format, dimensions, and byte size;
-- the chosen design rationale in one sentence;
-- whether upload was not requested, pending, or publicly verified.
+- one-sentence design rationale;
+- validation and version-promotion status;
+- upload status: not requested, pending, or publicly verified.
 
 Do not leave project-bound output only in a temporary or model-owned directory.

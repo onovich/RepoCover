@@ -1,4 +1,4 @@
 interface:
   display_name: "RepoCover"
-  short_description: "Create polished GitHub social preview images"
-  default_prompt: "Use $repo-cover to create and validate a polished social preview for this GitHub repository."
+  short_description: "Audit repositories and create GitHub social previews"
+  default_prompt: "Use $repo-cover to inspect this repository or portfolio, screen for cover-worthy projects when needed, then create and validate polished GitHub social previews."
