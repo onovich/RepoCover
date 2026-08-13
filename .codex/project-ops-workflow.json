@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "initializedMarker": "codex-project-ops-workflow: initialized",
+  "initializedAt": "2026-08-13 14:43:30 +08:00",
+  "projectName": "RepoCover",
+  "repoRoot": "D:/Skills/RepoCover",
+  "validateSequence": [
+    "test",
+    "structureCheck"
+  ],
+  "operations": {
+    "envCheck": {
+      "commands": [
+        "python --version",
+        "node --version"
+      ]
+    },
+    "restoreDeps": { "commands": [] },
+    "installDeps": { "commands": [] },
+    "build": { "commands": [] },
+    "test": {
+      "commands": [
+        "python scripts/check.py"
+      ]
+    },
+    "lint": { "commands": [] },
+    "format": { "commands": [] },
+    "typecheck": { "commands": [] },
+    "structureCheck": {
+      "commands": [
+        "python scripts/check.py"
+      ]
+    },
+    "codegen": { "commands": [] },
+    "docsCheck": { "commands": [] },
+    "smoke": { "urls": [], "commands": [] },
+    "package": { "commands": [] },
+    "releaseDryRun": {
+      "commands": [
+        "python scripts/check.py"
+      ]
+    }
+  },
+  "devServer": {
+    "startCommand": "",
+    "healthUrl": "",
+    "readyText": "",
+    "startupTimeoutSeconds": 30,
+    "pidFile": ".codex/project-ops-devserver.pid"
+  },
+  "forbiddenPolicy": "Do not run destructive clean/reset/deploy commands unless the user explicitly asks."
+}

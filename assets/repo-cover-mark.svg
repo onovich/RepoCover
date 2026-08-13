@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">RepoCover mark</title>
+  <desc id="desc">A framed repository cover with crop handles and an orange signature corner.</desc>
+  <rect width="512" height="512" rx="112" fill="#0c4261"/>
+  <rect x="82" y="142" width="348" height="228" rx="28" fill="#f8f2e9" stroke="#78c7e3" stroke-width="10"/>
+  <rect x="116" y="176" width="280" height="160" rx="18" fill="#ffffff" stroke="#15364a" stroke-width="8"/>
+  <path d="M116 270h280" stroke="#d9e6ea" stroke-width="8"/>
+  <path d="M151 216h128M151 241h82" stroke="#15364a" stroke-width="14" stroke-linecap="round"/>
+  <rect x="310" y="202" width="52" height="86" rx="14" fill="#ff7048"/>
+  <circle cx="82" cy="142" r="16" fill="#78c7e3" stroke="#0c4261" stroke-width="8"/>
+  <circle cx="430" cy="142" r="16" fill="#78c7e3" stroke="#0c4261" stroke-width="8"/>
+  <circle cx="82" cy="370" r="16" fill="#78c7e3" stroke="#0c4261" stroke-width="8"/>
+  <circle cx="430" cy="370" r="16" fill="#ff7048" stroke="#0c4261" stroke-width="8"/>
+</svg>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "RepoCover"
+  short_description: "Create polished GitHub social preview images"
+  default_prompt: "Use $repo-cover to create and validate a polished social preview for this GitHub repository."

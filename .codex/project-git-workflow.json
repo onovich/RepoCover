@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "initializedMarker": "codex-project-git-workflow: initialized",
+  "initializedAt": "2026-08-13 14:43:29 +08:00",
+  "projectName": "RepoCover",
+  "repoRoot": "D:/Skills/RepoCover",
+  "safeDirectory": "D:/Skills/RepoCover",
+  "statusCommand": "git -c safe.directory=D:/Skills/RepoCover status --short --branch",
+  "validationCommands": [
+    "python scripts/check.py"
+  ],
+  "stagingPolicy": "ask each time",
+  "commitCommand": "",
+  "pushCommand": "git -c safe.directory=D:/Skills/RepoCover push -u origin HEAD",
+  "docsRequirement": "Keep README.md, README.zh-CN.md, docs/PROJECT_STATUS.md, and docs/RELEASE_CHECKLIST.md aligned with public behavior.",
+  "forbiddenCommands": "Do not publish a release or upload repository artwork unless the user explicitly asks."
+}
