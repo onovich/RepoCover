@@ -41,6 +41,12 @@ The primary path is:
 - English and Chinese launch copy, Show HN copy, community drafts, image descriptions, and UTM links are collected in `docs/LAUNCH_KIT.md`.
 - Launch copy points to the gallery as a whole rather than promoting one owner project as a special case.
 
+### 5. Search-engine discovery — partly automated
+
+- The root sitemap is advertised through `robots.txt` and remains ready for manual Search Console submission.
+- Every successful Pages deployment now notifies IndexNow-compatible search engines with the canonical URLs from the sitemap.
+- IndexNow helps participating search engines discover changes; it does not submit to Google and does not guarantee indexing or ranking.
+
 ## Domain switch record
 
 The following settings were applied on 2026-08-14.

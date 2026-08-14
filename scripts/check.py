@@ -335,10 +335,22 @@ def check_site() -> None:
             "assets/repo-cover-mark.svg",
             "assets/social-preview.png",
             "assets/styles.css",
+            "indexnow-key.txt",
             ".nojekyll",
         ):
             if not (output / required).is_file():
                 fail(f"Site build is missing {required}")
+
+        indexnow_key = (output / "indexnow-key.txt").read_text(encoding="utf-8").strip()
+        if not re.fullmatch(r"[A-Za-z0-9-]{8,128}", indexnow_key):
+            fail("Site build contains an invalid IndexNow key")
+
+        pages_workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(
+            encoding="utf-8"
+        )
+        for marker in ("notify-indexnow:", "python scripts/submit_indexnow.py"):
+            if marker not in pages_workflow:
+                fail(f"Pages workflow is missing IndexNow integration: {marker}")
 
         for filename in EXPECTED_SOCIAL_ASSETS:
             required = output / "assets" / "social" / filename
