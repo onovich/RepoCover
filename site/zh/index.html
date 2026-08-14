@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RepoCover — 为 GitHub 仓库生成 Social Preview 的 Codex Skill</title>
-  <meta name="description" content="RepoCover 会先阅读代码、文档、界面与项目素材，再根据真实项目证据设计可编辑的 1280×640 GitHub Social Preview，而不是套用模板。">
+  <meta name="description" content="RepoCover 会先阅读代码、文档、界面与项目素材，再围绕项目真正有辨识度的部分设计可编辑的 1280×640 GitHub Social Preview，而不是套用模板。">
   <meta name="theme-color" content="#0c4261">
   <link rel="canonical" href="https://blog.onovich.com/RepoCover/zh/">
   <link rel="alternate" hreflang="en" href="https://blog.onovich.com/RepoCover/">
   <link rel="alternate" hreflang="zh-CN" href="https://blog.onovich.com/RepoCover/zh/">
   <link rel="alternate" hreflang="x-default" href="https://blog.onovich.com/RepoCover/">
   <link rel="icon" href="../assets/repo-cover-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/styles.css?v=0.1.0">
+  <link rel="stylesheet" href="../assets/styles.css?v=0.1.1">
   <meta property="og:type" content="website">
   <meta property="og:title" content="RepoCover — 让仓库本身决定封面长什么样">
-  <meta property="og:description" content="一个先读代码、文档、界面与素材，再设计 GitHub Social Preview 的 Codex Skill。">
+  <meta property="og:description" content="一个先读代码、文档、界面与素材，再设计 GitHub Social Preview 的 AI 编程 Skill。">
   <meta property="og:url" content="https://blog.onovich.com/RepoCover/zh/">
   <meta property="og:image" content="https://blog.onovich.com/RepoCover/assets/social-preview.png">
   <meta property="og:image:width" content="1280">
@@ -44,25 +44,25 @@
   <main id="main">
     <section class="site-shell hero">
       <div class="hero__copy">
-        <div class="eyebrow">Codex Skill · GitHub Social Preview</div>
+        <div class="eyebrow">AI 编程 Skill · GitHub Social Preview</div>
         <h1>你的仓库，本来就有自己的<span>视觉语言。</span></h1>
-        <p class="hero__lead">RepoCover 会先阅读代码、文档、界面和项目素材，再设计一张可编辑的 1280×640 封面。最终长什么样，由仓库决定，而不是由模板决定。</p>
+        <p class="hero__lead">RepoCover 会先阅读代码、文档、界面和项目素材，再设计一张可编辑的 1280×640 封面。它会保留项目真正有辨识度的部分，而不是把每个仓库都塞进同一套模板。</p>
         <div class="hero__actions">
           <a class="button button--primary" href="#install">安装 RepoCover <span aria-hidden="true">↓</span></a>
           <a class="button button--secondary" href="examples/">查看真实案例</a>
         </div>
-        <p class="hero__note">本地和远端仓库都可以使用。如果项目能在本地运行预览，尤其是已有前端界面的 Web 项目，通常能提供最完整的视觉依据。</p>
+        <p class="hero__note">首选在 Codex 中使用，也支持其他能够运行 Skill 的 AI 编程工具。本地和远端仓库都可以；能在本地预览的项目通常效果最好。</p>
       </div>
 
       <div class="cover-stage" aria-label="RepoCover 输出检查框">
         <div class="cover-stage__measure"><span>输出 / social-preview.png</span><span>1280 × 640</span></div>
         <div class="crop-frame">
-          <img src="../assets/social-preview.png" alt="RepoCover 的 Social Preview，展示从项目证据到设计与验证的过程">
+          <img src="../assets/social-preview.png" alt="RepoCover 的 Social Preview，展示项目内容、封面设计与最终检查">
           <span class="crop-handle" aria-hidden="true"></span><span class="crop-handle" aria-hidden="true"></span>
           <span class="crop-handle" aria-hidden="true"></span><span class="crop-handle" aria-hidden="true"></span>
         </div>
         <div class="cover-stage__footer">
-          <div><strong>项目证据</strong><span>README · 代码 · UI · 素材</span></div>
+          <div><strong>项目内容</strong><span>README · 代码 · UI · 素材</span></div>
           <div><strong>可编辑</strong><span>保留 SVG 源文件</span></div>
           <div><strong>已检查</strong><span>原尺寸 · 缩略图</span></div>
         </div>
@@ -72,17 +72,17 @@
     <div class="site-shell proof-bar" aria-label="RepoCover 输出规格">
       <div class="proof-bar__item"><strong>1280 × 640</strong><span>GitHub 最佳显示规格</span></div>
       <div class="proof-bar__item"><strong>SVG + PNG</strong><span>可编辑源文件与最终图片</span></div>
-      <div class="proof-bar__item"><strong>小于 1 MB</strong><span>经过机械校验</span></div>
-      <div class="proof-bar__item"><strong>权限分开</strong><span>未要求时不会上传</span></div>
+      <div class="proof-bar__item"><strong>小于 1 MB</strong><span>自动检查</span></div>
+      <div class="proof-bar__item"><strong>操作分开</strong><span>未要求时不会上传</span></div>
     </div>
 
     <section class="section section--ink">
       <div class="site-shell story-grid">
-        <p class="story-quote">我写了 <em>300+</em> 个几乎无人问津的仓库。</p>
+        <p class="story-quote">再好的仓库，如果不能在第一眼说明自己，也很容易被<em>略过。</em></p>
         <div class="story-copy">
           <div class="section-kicker">关于</div>
-          <p>我知道很多程序员并不擅长包装自己的仓库，我自己也一样：喜欢埋头苦干。</p>
-          <p>在 vibe coding 大行其道的今天，我开始意识到，让走过路过的人愿意多看一眼，或许有意义。</p>
+          <p>很多程序员更擅长把东西做出来，却不擅长包装自己的作品。我也是这样。</p>
+          <p>当 AI 让创造变得更快，一个清楚的第一印象，或许能让人愿意停下来多看一眼。</p>
           <p>于是，就有了 RepoCover。我花了一天时间做的，看上去还不赖，我自己先用了。</p>
         </div>
       </div>
@@ -90,13 +90,17 @@
 
     <section class="section section--white">
       <div class="site-shell">
-        <div class="section-kicker">先判断材料</div>
-        <h2 class="section-heading">截图是依据，但不应该直接等于设计。</h2>
-        <p class="section-intro">RepoCover 会先判断仓库已有素材的美观度和代表性。好的部分保留并重组，干扰性的 UI 删掉，缺失的结构只在证据允许的范围内补充。</p>
+        <div class="section-kicker">先看项目有什么</div>
+        <h2 class="section-heading">截图可以当参考，但不一定适合直接做封面。</h2>
+        <p class="section-intro">RepoCover 会保留有用的部分，删掉杂乱内容，再重新构图，让画面缩小成分享小图后仍然清楚好看。</p>
+        <div class="mode-choice-note">
+          <div><span class="mode-choice-note__label">三种起点</span><strong>RepoCover 会根据项目现有内容选择其中一种。</strong></div>
+          <span>不需要同时具备。</span>
+        </div>
         <div class="mode-grid">
-          <article class="mode-card"><span class="mode-card__index">A</span><h3>已有产品界面</h3><p>保留有辨识度的真实界面，围绕核心交互裁切，同时清理浏览器边框、调试信息与画面碎片。</p></article>
-          <article class="mode-card"><span class="mode-card__index">B</span><h3>已有品牌或主形象</h3><p>保留项目原有的角色、维度、配色和视觉作用，再重新组织周围的版式与信息。</p></article>
-          <article class="mode-card"><span class="mode-card__index">C</span><h3>没有可用图片</h3><p>从项目真实的对象、动作、关系和结果中推导视觉系统，不假设之前已经存在一张好封面。</p></article>
+          <article class="mode-card"><span class="mode-card__index">A</span><span class="mode-card__condition">如果项目已经有</span><h3>可运行的产品界面</h3><p>保留有辨识度的真实交互，围绕重点裁切，并清理浏览器边框、调试信息与残缺画面。</p></article>
+          <article class="mode-card"><span class="mode-card__index">B</span><span class="mode-card__condition">如果项目已经有</span><h3>品牌或核心视觉</h3><p>保留原有角色、空间感和配色，再重新安排周围的文字与版式，让封面更清楚。</p></article>
+          <article class="mode-card"><span class="mode-card__index">C</span><span class="mode-card__condition">如果项目确实</span><h3>没有适合的图片</h3><p>根据项目做什么、怎么工作来建立画面，不凭空添加功能，也不假设以前已有封面。</p></article>
         </div>
       </div>
     </section>
@@ -106,25 +110,29 @@
         <div class="section-kicker">工作方式</div>
         <h2 class="section-heading">先读，再画。</h2>
         <div class="step-grid">
-          <article class="step-card"><span class="step-card__index">01</span><h3>查看项目</h3><p>阅读 README、关键代码、项目规则、截图和仓库自带的视觉素材。</p></article>
-          <article class="step-card"><span class="step-card__index">02</span><h3>前置诊断</h3><p>确定一个核心承诺、仓库能支持的证据，以及不应该出现在封面里的内容。</p></article>
-          <article class="step-card"><span class="step-card__index">03</span><h3>重新构图</h3><p>选择最能保留项目身份的制作方式，清理冗余并修正画面结构。</p></article>
-          <article class="step-card"><span class="step-card__index">04</span><h3>双尺寸验收</h3><p>检查 SVG 和 PNG 的原尺寸与 320×160 缩略图，以及明暗两种背景。</p></article>
+          <article class="step-card"><span class="step-card__index">01</span><h3>读懂项目</h3><p>查看 README、关键代码、项目规则、截图，以及仓库里已有的视觉素材。</p></article>
+          <article class="step-card"><span class="step-card__index">02</span><h3>判断能不能做</h3><p>确认现有内容是否足以做出一张靠谱的封面，该用什么、缺什么，以及哪些内容不该放进去。</p></article>
+          <article class="step-card"><span class="step-card__index">03</span><h3>重新构图</h3><p>保留项目有辨识度的部分，删掉杂乱内容，并围绕一个重点重新安排画面。</p></article>
+          <article class="step-card"><span class="step-card__index">04</span><h3>检查结果</h3><p>最终的 SVG 和 PNG 会同时检查原尺寸与 320×160 缩略图，并放在浅色、深色背景上确认效果。</p></article>
         </div>
+        <aside class="format-guide">
+          <div><span class="mini-label">第一次接触 Social Preview？</span><strong>这份指南会说明图片显示在哪里、什么尺寸最合适，以及如何在 GitHub 中设置。</strong></div>
+          <a href="github-social-preview-guide/">阅读 GitHub Social Preview 指南 <span aria-hidden="true">→</span></a>
+        </aside>
       </div>
     </section>
 
     <section class="section section--white">
       <div class="site-shell">
         <div class="showcase-header">
-          <div><div class="section-kicker">真实仓库</div><h2 class="section-heading">同一种尺寸，不同的项目身份。</h2></div>
+          <div><div class="section-kicker">符合 GitHub Social Preview 规格</div><h2 class="section-heading">规格相同，但每个仓库都有自己的样子。</h2></div>
           <a class="button button--secondary" href="examples/">查看全部 8 个案例</a>
         </div>
         <div class="cover-wall">
-          <figure class="cover-tile"><img src="../examples/prismdraft.png" alt="PrismDraft 仓库封面，展示多面体 3D 形象" loading="lazy"><figcaption><strong>PrismDraft</strong><span>3D 身份</span></figcaption></figure>
-          <figure class="cover-tile"><img src="../examples/littlepng.png" alt="LittlePNG 仓库封面，展示本地图像批处理界面" loading="lazy"><figcaption><strong>LittlePNG</strong><span>产品界面</span></figcaption></figure>
-          <figure class="cover-tile"><img src="../examples/beat.png" alt="Beat 仓库封面，展示推断出的节奏事件" loading="lazy"><figcaption><strong>Beat</strong><span>纯推断</span></figcaption></figure>
-          <figure class="cover-tile"><img src="../examples/deskmochi.png" alt="DeskMochi 仓库封面，展示桌面陪伴角色" loading="lazy"><figcaption><strong>DeskMochi</strong><span>角色素材</span></figcaption></figure>
+          <figure class="cover-tile"><img src="../examples/prismdraft.png" alt="PrismDraft 仓库封面，展示多面体 3D 形象" loading="lazy"><figcaption><strong class="repo-name" lang="en" translate="no">PrismDraft</strong><span>3D 特征</span></figcaption></figure>
+          <figure class="cover-tile"><img src="../examples/littlepng.png" alt="LittlePNG 仓库封面，展示本地图像批处理界面" loading="lazy"><figcaption><strong class="repo-name" lang="en" translate="no">LittlePNG</strong><span>产品界面</span></figcaption></figure>
+          <figure class="cover-tile"><img src="../examples/beat.png" alt="Beat 仓库封面，展示推断出的节奏事件" loading="lazy"><figcaption><strong class="repo-name" lang="en" translate="no">Beat</strong><span>无现成图片</span></figcaption></figure>
+          <figure class="cover-tile"><img src="../examples/deskmochi.png" alt="DeskMochi 仓库封面，展示桌面陪伴角色" loading="lazy"><figcaption><strong class="repo-name" lang="en" translate="no">DeskMochi</strong><span>核心视觉</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -132,18 +140,18 @@
     <section class="section" id="install">
       <div class="site-shell">
         <div class="section-kicker">快速开始</div>
-        <h2 class="section-heading">把仓库交给 Codex，然后要一张封面。</h2>
-        <p class="section-intro">从 GitHub 安装 Skill，重启 Codex，再打开一个本地仓库或提供一个远端仓库地址。</p>
+        <h2 class="section-heading">首选 Codex，也支持其他兼容的 AI 编程工具。</h2>
+        <p class="section-intro">在能够安装并运行 Skill 的工具中使用 RepoCover。打开本地仓库，或提供一个远端仓库地址即可。</p>
         <div class="install-panel">
-          <div><div class="mini-label">安装</div><pre id="install-command" tabindex="0">使用 $skill-installer，从 onovich/RepoCover 的 skill/repo-cover 安装 Skill。</pre></div>
+          <div><div class="mini-label">安装</div><pre id="install-command" tabindex="0">安装 https://github.com/onovich/RepoCover 的 Skill。</pre></div>
           <button class="copy-button" type="button" data-copy="#install-command" data-copied="已复制">复制</button>
-          <div><div class="mini-label">然后输入</div><pre id="prompt-command" tabindex="0">使用 $repo-cover 理解这个项目，并生成一张经过验证的 GitHub Social Preview。</pre></div>
+          <div><div class="mini-label">使用</div><pre id="prompt-command" tabindex="0">使用 $repo-cover 为当前项目生成封面。</pre></div>
           <button class="copy-button" type="button" data-copy="#prompt-command" data-copied="已复制">复制</button>
           <p class="install-note">RepoCover 默认输出可编辑的 SVG 和精确的 1280×640 PNG。除非你另外要求，否则它不会修改 README、上传图片或更改仓库设置。</p>
         </div>
         <div class="button-row">
           <a class="button button--primary" href="https://github.com/onovich/RepoCover">打开 GitHub 仓库</a>
-          <a class="button button--secondary" href="github-social-preview-guide/">阅读 Social Preview 指南</a>
+          <a class="button button--secondary" href="examples/">查看案例</a>
         </div>
       </div>
     </section>
@@ -151,11 +159,11 @@
     <section class="section section--white">
       <div class="site-shell">
         <div class="section-kicker">常见问题</div>
-        <h2 class="section-heading">简单说。</h2>
+        <h2 class="section-heading">你可能还想知道。</h2>
         <div class="faq-grid">
-          <article class="faq-card"><h3>没有截图也能生成吗？</h3><p>可以。RepoCover 会从仓库证据推导视觉方向，但不会虚构运行结果，也不会假装看到了并不存在的界面。</p></article>
+          <article class="faq-card"><h3>没有截图也能生成吗？</h3><p>可以。RepoCover 会根据仓库现有内容确定画面方向，但不会虚构界面，也不会声称项目具备无法确认的功能。</p></article>
           <article class="faq-card"><h3>能利用已有 Web 项目吗？</h3><p>可以。能访问的本地预览或已有前端通常效果最好，因为可以检查真实界面，再有选择地重组。</p></article>
-          <article class="faq-card"><h3>每张封面会不会都很像？</h3><p>不会。输出规格与验收标准一致，但配色、主体、维度、版式和材料会跟随当前项目。</p></article>
+          <article class="faq-card"><h3>每张封面会不会都很像？</h3><p>不会。每张图都遵循相同的 GitHub 输出规格，但主体、配色、空间感和版式来自当前项目。</p></article>
           <article class="faq-card"><h3>会自动上传到 GitHub 吗？</h3><p>只有你另外要求时才会。生成文件和修改仓库设置，是两次不同的授权。</p></article>
         </div>
       </div>
@@ -165,14 +173,14 @@
   <footer class="site-footer">
     <div class="site-shell">
       <div class="site-footer__grid">
-        <div><a class="brand" href="./"><img src="../assets/repo-cover-mark.svg" alt="" width="38" height="38"><span>RepoCover</span></a><p>一个为不同仓库生成不同 GitHub Social Preview 的独立开源 Codex Skill，与 GitHub, Inc. 不存在隶属或背书关系。</p></div>
+        <div><a class="brand" href="./"><img src="../assets/repo-cover-mark.svg" alt="" width="38" height="38"><span>RepoCover</span></a><p>一个为不同项目生成 GitHub Social Preview 的独立开源 Skill。首选 Codex，也兼容其他能够运行 Skill 的 AI 编程工具；与 GitHub, Inc. 不存在隶属或背书关系。</p></div>
         <nav class="footer-links" aria-label="页脚导航">
           <a href="examples/">案例</a><a href="github-social-preview-guide/">指南</a>
           <a href="support/">支持</a><a href="privacy/">隐私</a>
           <a href="terms/">条款</a><a href="https://github.com/onovich/RepoCover">源码</a>
         </nav>
       </div>
-      <div class="footer-bottom"><span>MIT 开源 · © <span data-current-year>2026</span> onovich</span><span>证据 → 设计 → 验证</span></div>
+      <div class="footer-bottom"><span>MIT 开源 · © <span data-current-year>2026</span> onovich</span><span>项目 → 设计 → 检查</span></div>
     </div>
   </footer>
   <script src="../assets/app.js?v=0.1.0" defer></script>

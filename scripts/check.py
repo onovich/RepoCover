@@ -293,6 +293,65 @@ def check_site() -> None:
             if not (output / required).is_file():
                 fail(f"Site build is missing {required}")
 
+        homepage_text = (output / "index.html").read_text(encoding="utf-8")
+        homepage_zh_text = (output / "zh" / "index.html").read_text(encoding="utf-8")
+        examples_text = (output / "examples" / "index.html").read_text(encoding="utf-8")
+        examples_zh_text = (output / "zh" / "examples" / "index.html").read_text(
+            encoding="utf-8"
+        )
+
+        retired_public_copy = (
+            "300+",
+            "restart Codex",
+            "重启 Codex",
+            "hero image",
+            "Hero asset",
+            "Cold start",
+            "The short version.",
+            "简单说。",
+            "Same constraints. No shared template.",
+            "相同的规格，不共用一套模板。",
+        )
+        public_copy = homepage_text + homepage_zh_text + examples_text + examples_zh_text
+        for phrase in retired_public_copy:
+            if phrase in public_copy:
+                fail(f"Site still contains retired public wording: {phrase}")
+
+        for required_phrase in (
+            "No project needs all three.",
+            "不需要同时具备。",
+            "Install the Skill from https://github.com/onovich/RepoCover.",
+            "安装 https://github.com/onovich/RepoCover 的 Skill。",
+            "Use $repo-cover to create a cover for the current project.",
+            "使用 $repo-cover 为当前项目生成封面。",
+        ):
+            if required_phrase not in public_copy:
+                fail(f"Site is missing required plain-language copy: {required_phrase}")
+
+        repository_names = (
+            "PrismDraft",
+            "LittlePNG",
+            "DeskMochi",
+            "AudioTrim",
+            "Beat",
+            "JustGoal.skill",
+            "Knot",
+            "Ping",
+        )
+        for relative, text in (
+            ("examples/index.html", examples_text),
+            ("zh/examples/index.html", examples_zh_text),
+        ):
+            for repository_name in repository_names:
+                if not re.search(
+                    rf'<h2[^>]*translate="no"[^>]*>{re.escape(repository_name)}</h2>',
+                    text,
+                ):
+                    fail(
+                        f"Repository name must remain untranslated in {relative}: "
+                        f"{repository_name}"
+                    )
+
 
 def check_images() -> None:
     validator = SKILL / "scripts" / "validate_preview.py"

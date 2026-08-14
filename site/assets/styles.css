@@ -449,7 +449,49 @@ a {
 }
 
 .mode-grid {
+  margin-top: 20px;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.mode-choice-note {
+  display: flex;
+  margin-top: 42px;
+  padding: 18px 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: white;
+  background: var(--ink-deep);
+  border-radius: 18px;
+}
+
+.mode-choice-note div {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.mode-choice-note__label,
+.mode-card__condition {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mode-choice-note__label {
+  color: var(--sky);
+}
+
+.mode-choice-note > span {
+  flex: 0 0 auto;
+  padding: 7px 11px;
+  color: var(--ink-deep);
+  background: var(--sky);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 .mode-card,
@@ -475,6 +517,11 @@ a {
   font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
   font-size: 0.76rem;
   font-weight: 800;
+}
+
+.mode-card__condition {
+  margin-left: 10px;
+  color: #3b7085;
 }
 
 .mode-card h3,
@@ -503,6 +550,44 @@ a {
 
 .step-card {
   min-height: 230px;
+}
+
+.format-guide {
+  display: flex;
+  margin-top: 22px;
+  padding: 22px 24px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  color: white;
+  background: var(--ink-deep);
+  border-radius: 20px;
+}
+
+.format-guide .mini-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--sky);
+}
+
+.format-guide strong {
+  display: block;
+  max-width: 720px;
+}
+
+.format-guide a {
+  flex: 0 0 auto;
+  color: var(--ink-deep);
+  background: var(--sky);
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.format-guide a:hover {
+  background: white;
 }
 
 .showcase-header {
@@ -577,6 +662,8 @@ a {
   border: 1px solid rgb(120 199 227 / 20%);
   border-radius: 16px;
   font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   white-space: pre-wrap;
 }
 
@@ -619,6 +706,10 @@ a {
   margin: 28px 0 0;
   color: var(--muted);
   font-size: 1.18rem;
+}
+
+.title-tail {
+  display: inline-block;
 }
 
 .example-grid {
@@ -832,6 +923,18 @@ a {
   .mode-grid,
   .step-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mode-choice-note,
+  .format-guide {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mode-choice-note div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
   }
 }
 
