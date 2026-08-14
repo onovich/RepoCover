@@ -331,6 +331,7 @@ def check_site() -> None:
                 )
 
         for required in (
+            "BingSiteAuth.xml",
             "assets/app.js",
             "assets/repo-cover-mark.svg",
             "assets/social-preview.png",
@@ -344,6 +345,10 @@ def check_site() -> None:
         indexnow_key = (output / "indexnow-key.txt").read_text(encoding="utf-8").strip()
         if not re.fullmatch(r"[A-Za-z0-9-]{8,128}", indexnow_key):
             fail("Site build contains an invalid IndexNow key")
+
+        bing_auth = ET.parse(output / "BingSiteAuth.xml").getroot()
+        if bing_auth.tag != "users" or not bing_auth.findtext("user", "").strip():
+            fail("Site build contains an invalid Bing verification file")
 
         pages_workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(
             encoding="utf-8"
