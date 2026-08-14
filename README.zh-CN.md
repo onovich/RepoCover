@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-[官网](https://blog.onovich.com/RepoCover/zh/) · [案例](https://blog.onovich.com/RepoCover/zh/examples/) · [GitHub Social Preview 指南](https://blog.onovich.com/RepoCover/zh/github-social-preview-guide/)
+[官网](https://repo-cover.onovich.com/zh/) · [案例](https://repo-cover.onovich.com/zh/examples/) · [GitHub Social Preview 指南](https://repo-cover.onovich.com/zh/github-social-preview-guide/)
 
 ## 关于
 
@@ -46,7 +46,11 @@ docs/social-preview.png
 
 ## 案例
 
-下面 8 张封面都由同一个 Skill 生成，但每一张都会跟随各自的项目，而不是套用同一套模板。
+[Research 完整案例](https://repo-cover.onovich.com/zh/examples/#research-case-title)展示了如何把一个可运行的双语研究网站整理成适合分享的小图，同时保留项目原本的辨识度。
+
+[![Research 社交预览](examples/research.png)](https://repo-cover.onovich.com/zh/examples/#research-case-title)
+
+下面还有 8 张由同一个 Skill 生成的封面。每一张都会跟随各自的项目，而不是套用同一套模板。
 
 | PrismDraft | LittlePNG |
 | --- | --- |

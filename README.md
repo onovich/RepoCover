@@ -2,7 +2,7 @@
 
 [简体中文](README.zh-CN.md)
 
-[Website](https://blog.onovich.com/RepoCover/) · [Examples](https://blog.onovich.com/RepoCover/examples/) · [GitHub Social Preview guide](https://blog.onovich.com/RepoCover/github-social-preview-guide/)
+[Website](https://repo-cover.onovich.com/) · [Examples](https://repo-cover.onovich.com/examples/) · [GitHub Social Preview guide](https://repo-cover.onovich.com/github-social-preview-guide/)
 
 ## About
 
@@ -46,7 +46,11 @@ Creating the files does not authorize README edits, uploads, or repository-setti
 
 ## Examples
 
-The same Skill produced all eight covers below. Each one follows its own project rather than a shared template.
+The [Research case study](https://repo-cover.onovich.com/examples/#research-case-title) shows how a working bilingual report site was simplified and recomposed without losing its identity.
+
+[![Research social preview](examples/research.png)](https://repo-cover.onovich.com/examples/#research-case-title)
+
+The same Skill produced the eight additional covers below. Each one follows its own project rather than a shared template.
 
 | PrismDraft | LittlePNG |
 | --- | --- |
