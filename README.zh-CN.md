@@ -46,27 +46,15 @@ docs/social-preview.png
 
 ## 案例
 
-[Research 完整案例](https://repo-cover.onovich.com/zh/examples/#research-case-title)展示了如何把一个可运行的双语研究网站整理成适合分享的小图，同时保留项目原本的辨识度。
+[浏览案例展示](https://repo-cover.onovich.com/zh/examples/)可以查看更多说明。下面每张图片都可以点击进入对应的公开仓库。
 
-[![Research 社交预览](examples/research.png)](https://repo-cover.onovich.com/zh/examples/#research-case-title)
-
-下面还有 8 张由同一个 Skill 生成的封面。每一张都会跟随各自的项目，而不是套用同一套模板。
-
-| PrismDraft | LittlePNG |
-| --- | --- |
-| ![PrismDraft 社交预览](examples/prismdraft.png) | ![LittlePNG 社交预览](examples/littlepng.png) |
-
-| DeskMochi | AudioTrim |
-| --- | --- |
-| ![DeskMochi 社交预览](examples/deskmochi.png) | ![AudioTrim 社交预览](examples/audiotrim.png) |
-
-| Beat | JustGoal.skill |
-| --- | --- |
-| ![Beat 社交预览](examples/beat.png) | ![JustGoal.skill 社交预览](examples/justgoal-skill.png) |
-
-| Knot | Ping |
-| --- | --- |
-| ![Knot 社交预览](examples/knot.png) | ![Ping 社交预览](examples/ping.png) |
+| Research | PrismDraft | LittlePNG |
+| --- | --- | --- |
+| [![Research 社交预览](examples/research.png)](https://github.com/onovich/Research) | [![PrismDraft 社交预览](examples/prismdraft.png)](https://github.com/onovich/PrismDraft) | [![LittlePNG 社交预览](examples/littlepng.png)](https://github.com/onovich/LitPng) |
+| DeskMochi | AudioTrim | Beat |
+| [![DeskMochi 社交预览](examples/deskmochi.png)](https://github.com/onovich/DeskMochi) | [![AudioTrim 社交预览](examples/audiotrim.png)](https://github.com/onovich/AudioTrim) | [![Beat 社交预览](examples/beat.png)](https://github.com/onovich/Beat) |
+| JustGoal.skill | Knot | Ping |
+| [![JustGoal.skill 社交预览](examples/justgoal-skill.png)](https://github.com/onovich/JustGoal.skill) | [![Knot 社交预览](examples/knot.png)](https://github.com/onovich/Knot) | [![Ping 社交预览](examples/ping.png)](https://github.com/onovich/Ping) |
 
 ## 工作原理
 

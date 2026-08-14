@@ -29,36 +29,6 @@ Ready-to-review launch copy and asset assignments for RepoCover. Edit any first-
 
 The older `assets/plugin-showcase.png` remains a project asset, but it is not part of this launch set because its internal terminology no longer matches the public product language.
 
-## Featured case follow-up
-
-Publish this after the general launch post. It gives RepoCover a concrete result while also introducing another useful project in the onovich portfolio.
-
-### English
-
-```text
-The difficult part of an AI-generated repository cover is not making it look polished. It is keeping the project recognizable.
-
-Research already had a dark green editorial interface for bilingual, evidence-backed web reports. RepoCover kept that identity, removed navigation and catalog detail, then recomposed the real product around one clear promise.
-
-The full case, live product, and source repository:
-https://repo-cover.onovich.com/examples/?utm_source=case_post&utm_medium=social&utm_campaign=launch#research-case-title
-```
-
-Attach `examples/research.png`.
-
-### 中文
-
-```text
-用 AI 做一张好看的仓库封面并不算最难。更难的是，做完以后还让人认得出原来的项目。
-
-Research 本来就有一套深绿色的编辑式界面，用来发布有资料依据的双语研究报告。RepoCover 保留了这些特点，删掉导航和列表细节，再围绕一个核心用途重新构图。
-
-完整案例、线上产品和源码：
-https://repo-cover.onovich.com/zh/examples/?utm_source=case_post&utm_medium=social&utm_campaign=launch#research-case-title
-```
-
-配图使用 `examples/research.png`。
-
 ## X
 
 ### Post
@@ -94,7 +64,7 @@ The visual approach depends on what the repository already has:
 
 The result is an editable SVG and a validated 1280×640 PNG under 1 MB.
 
-The site includes a complete case study for a working bilingual research product, plus eight more visual examples:
+The site includes nine visual examples, each linked to the public repository behind it:
 https://repo-cover.onovich.com/?utm_source=linkedin&utm_medium=social&utm_campaign=launch
 
 I would be interested to see where this approach works well—and where it still misses the character of a project.
@@ -143,7 +113,7 @@ https://repo-cover.onovich.com/zh/?utm_source=cn_social&utm_medium=social&utm_ca
 
 最后会输出可编辑 SVG，以及精确的 1280×640、小于 1 MB 的 PNG，并检查原尺寸和缩略图是否都看得清。
 
-官网、一个完整案例和 8 个视觉案例：
+官网和 9 个封面案例：
 https://repo-cover.onovich.com/zh/?utm_source=cn_community&utm_medium=community&utm_campaign=launch
 
 源码：
@@ -167,7 +137,7 @@ I am better at building projects than presenting them, and I suspect many develo
 
 I made RepoCover, an open-source AI coding Skill that reads a repository before designing its GitHub Social Preview. The main design question is not simply how to generate an image. It is deciding whether to keep and recompose an existing interface, preserve a recognizable project visual, or start from the project's actual objects and behavior when no suitable image exists.
 
-The accepted output is an editable SVG plus an exact 1280×640 PNG under 1 MB. The repository contains the complete Skill, deterministic validation scripts, one full case study, and eight additional visual examples.
+The accepted output is an editable SVG plus an exact 1280×640 PNG under 1 MB. The repository contains the complete Skill, deterministic validation scripts, and nine visual examples linked to their public repositories.
 
 You can try it from the repository without an account or hosted service:
 https://github.com/onovich/RepoCover
@@ -234,7 +204,7 @@ The image generation itself was not the hardest part. A raw screenshot often con
 
 The approach that worked best was to decide among three cases before drawing: recompose a useful product interface, preserve an existing main visual, or derive a new direction only when the repository has no suitable image. The output stays editable as SVG and is also checked as a 1280×640 PNG at thumbnail size.
 
-I documented the workflow, one complete case study, and eight additional visual examples here:
+I documented the workflow and nine different visual examples here:
 https://github.com/onovich/RepoCover
 
 I am curious how other developers decide when a project screenshot should be cleaned up, redesigned, or left alone.

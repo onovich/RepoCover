@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RepoCover 案例 — GitHub Social Preview 完整案例</title>
-  <meta name="description" content="查看 RepoCover 如何把真实仓库与产品界面整理成清晰的 GitHub Social Preview，再浏览 8 个不同方向的视觉案例。">
+  <title>RepoCover 案例 — GitHub Social Preview 展示</title>
+  <meta name="description" content="浏览 RepoCover 为 9 个仓库生成的封面。每个项目采用不同的视觉方案，并可点击进入对应的公开 GitHub 仓库。">
   <meta name="theme-color" content="#0c4261">
   <link rel="canonical" href="{{SITE_ORIGIN}}/zh/examples/">
   <link rel="alternate" hreflang="en" href="{{SITE_ORIGIN}}/examples/">
   <link rel="alternate" hreflang="zh-CN" href="{{SITE_ORIGIN}}/zh/examples/">
   <link rel="alternate" hreflang="x-default" href="{{SITE_ORIGIN}}/examples/">
   <link rel="icon" href="../../assets/repo-cover-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../assets/styles.css?v=0.1.1">
+  <link rel="stylesheet" href="../../assets/styles.css?v=0.1.2">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RepoCover">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:title" content="真实仓库，也能有一眼可认的 Social Preview">
-  <meta property="og:description" content="查看一个完整 RepoCover 案例，再浏览 8 个来自真实界面、项目形象或代码的视觉方案。">
+  <meta property="og:title" content="不同仓库，不同的 Social Preview">
+  <meta property="og:description" content="浏览 9 张根据项目界面、视觉素材或代码生成的封面，并打开每张封面对应的仓库。">
   <meta property="og:url" content="{{SITE_ORIGIN}}/zh/examples/">
   <meta property="og:image" content="{{SITE_ORIGIN}}/assets/social/repocover-linkedin-zh.png">
   <meta property="og:image:type" content="image/png">
@@ -25,8 +25,8 @@
   <meta property="og:image:height" content="627">
   <meta property="og:image:alt" content="RepoCover 生成的 6 张不同代码仓库封面。">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="真实仓库，也能有一眼可认的 Social Preview">
-  <meta name="twitter:description" content="查看一个完整 RepoCover 案例和 8 个不同方向的视觉方案。">
+  <meta name="twitter:title" content="不同仓库，不同的 Social Preview">
+  <meta name="twitter:description" content="浏览 9 个 RepoCover 案例，并打开每张封面对应的仓库。">
   <meta name="twitter:image" content="{{SITE_ORIGIN}}/assets/social/repocover-linkedin-zh.png">
   <meta name="twitter:image:alt" content="RepoCover 生成的 6 张不同代码仓库封面。">
   <script type="application/ld+json">
@@ -35,21 +35,21 @@
     "@type": "CollectionPage",
     "name": "RepoCover 案例",
     "url": "{{SITE_ORIGIN}}/zh/examples/",
-    "description": "一个完整 RepoCover 案例和 8 个 GitHub Social Preview 视觉案例。",
+    "description": "9 个由 RepoCover 生成的 GitHub Social Preview 案例，每个案例都链接到对应的公开仓库。",
     "inLanguage": "zh-CN",
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": 9,
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Research", "url": "https://github.com/onovich/Research"},
-        {"@type": "ListItem", "position": 2, "name": "PrismDraft"},
-        {"@type": "ListItem", "position": 3, "name": "LittlePNG"},
-        {"@type": "ListItem", "position": 4, "name": "DeskMochi"},
-        {"@type": "ListItem", "position": 5, "name": "AudioTrim"},
-        {"@type": "ListItem", "position": 6, "name": "Beat"},
-        {"@type": "ListItem", "position": 7, "name": "JustGoal.skill"},
-        {"@type": "ListItem", "position": 8, "name": "Knot"},
-        {"@type": "ListItem", "position": 9, "name": "Ping"}
+        {"@type": "ListItem", "position": 2, "name": "PrismDraft", "url": "https://github.com/onovich/PrismDraft"},
+        {"@type": "ListItem", "position": 3, "name": "LittlePNG", "url": "https://github.com/onovich/LitPng"},
+        {"@type": "ListItem", "position": 4, "name": "DeskMochi", "url": "https://github.com/onovich/DeskMochi"},
+        {"@type": "ListItem", "position": 5, "name": "AudioTrim", "url": "https://github.com/onovich/AudioTrim"},
+        {"@type": "ListItem", "position": 6, "name": "Beat", "url": "https://github.com/onovich/Beat"},
+        {"@type": "ListItem", "position": 7, "name": "JustGoal.skill", "url": "https://github.com/onovich/JustGoal.skill"},
+        {"@type": "ListItem", "position": 8, "name": "Knot", "url": "https://github.com/onovich/Knot"},
+        {"@type": "ListItem", "position": 9, "name": "Ping", "url": "https://github.com/onovich/Ping"}
       ]
     }
   }
@@ -60,35 +60,21 @@
   <header class="site-shell topbar"><a class="brand" href="../"><img src="../../assets/repo-cover-mark.svg" alt="" width="38" height="38"><span>RepoCover</span></a><div class="topbar__right"><nav class="nav-links" aria-label="主导航"><a href="./" aria-current="page">案例</a><a href="../github-social-preview-guide/">指南</a><a href="https://github.com/onovich/RepoCover">GitHub</a></nav><nav class="language-links" aria-label="语言"><a href="../../examples/" data-language-link="en">EN</a><a href="./" data-language-link="zh-CN" aria-current="true">中文</a></nav></div></header>
 
   <main id="main">
-    <section class="site-shell page-hero"><div class="eyebrow">RepoCover 案例</div><h1>先看懂项目，<span class="title-tail">再看设计。</span></h1><p>先看一个完整案例：仓库是做什么的、原本有哪些视觉素材，以及 RepoCover 为了适应 Social Preview 做了哪些取舍。后面再看 8 个不同方向的视觉案例。</p></section>
-    <section class="site-shell featured-case" aria-labelledby="research-case-title">
-      <div class="featured-case__visual"><img src="../../examples/research.png" alt="Research 仓库封面，沿用深绿色编辑界面和双语研究报告流程"></div>
-      <div class="featured-case__body">
-        <div class="example-card__mode">重点案例 · 可运行产品</div>
-        <h2 id="research-case-title" class="repo-name" lang="en" translate="no">Research</h2>
-        <p class="featured-case__lead">一个双语研究系统，把决策问题整理成可复查的资料和易读的网页报告。</p>
-        <dl class="case-notes">
-          <div><dt>原始素材</dt><dd>已有可访问的网站，深绿色、编辑式排版和报告流程都很有辨识度。</dd></div>
-          <div><dt>设计取舍</dt><dd>保留这些特点，删掉导航和报告列表等细节，再围绕一个核心用途重新构图。</dd></div>
-          <div><dt>最终效果</dt><dd>没有直接贴网页截图，但缩小后仍能一眼认出是同一个项目。</dd></div>
-        </dl>
-        <div class="button-row"><a class="button button--primary" href="https://research.onovich.com/">打开线上产品</a><a class="button button--secondary" href="https://github.com/onovich/Research">查看仓库</a></div>
-      </div>
-    </section>
-    <section class="site-shell gallery-intro" aria-labelledby="visual-range-title"><div class="section-kicker">更多视觉案例</div><h2 class="section-heading" id="visual-range-title">项目不同，封面也不该长得一样。</h2><p class="section-intro">下面展示不同类型的处理方式：有的参考真实界面，有的沿用项目形象，也有的只能从代码所表达的功能出发。</p></section>
-    <section class="site-shell example-grid" aria-label="更多 RepoCover 案例">
-      <article class="example-card"><img src="../../examples/prismdraft.png" alt="PrismDraft 封面，展示多面体 3D 建模形象"><div class="example-card__body"><div class="example-card__mode">项目特征 · 3D</div><h2 class="repo-name" lang="en" translate="no">PrismDraft</h2><p>一个平涂 3D 建模库。封面保留了多面体的空间感，没有把它变成普通的平面几何图案。</p></div></article>
-      <article class="example-card"><img src="../../examples/littlepng.png" alt="LittlePNG 封面，展示本地图像处理界面"><div class="example-card__body"><div class="example-card__mode">真实界面 · Web 工具</div><h2 class="repo-name" lang="en" translate="no">LittlePNG</h2><p>真实界面仍然清楚可认，但浏览器杂项被去掉，任务队列也重新排成了更适合小图分享的画面。</p></div></article>
-      <article class="example-card"><img src="../../examples/deskmochi.png" alt="DeskMochi 封面，展示桌面陪伴角色"><div class="example-card__body"><div class="example-card__mode">核心视觉 · 桌面应用</div><h2 class="repo-name" lang="en" translate="no">DeskMochi</h2><p>这个桌面陪伴角色本来就很有辨识度，因此封面保留了它，并围绕它重新组织构图。</p></div></article>
-      <article class="example-card"><img src="../../examples/audiotrim.png" alt="AudioTrim 封面，展示波形编辑控件"><div class="example-card__body"><div class="example-card__mode">真实流程 · 音频工具</div><h2 class="repo-name" lang="en" translate="no">AudioTrim</h2><p>波形、选区和导出状态，比装饰性的音乐符号更能讲清楚这个游戏音频裁切工具。</p></div></article>
-      <article class="example-card"><img src="../../examples/beat.png" alt="Beat 封面，展示频带与节奏事件"><div class="example-card__body"><div class="example-card__mode">无现成图片 · 程序库</div><h2 class="repo-name" lang="en" translate="no">Beat</h2><p>仓库里没有适合直接做封面的图片，因此把频率能量、阈值、冷却和事件回调变成了画面的核心。</p></div></article>
-      <article class="example-card"><img src="../../examples/justgoal-skill.png" alt="JustGoal.skill 封面，展示分支与审查流程"><div class="example-card__body"><div class="example-card__mode">流程结构 · Codex Skill</div><h2 class="repo-name" lang="en" translate="no">JustGoal.skill</h2><p>分支、并行审查、合并门禁和修复循环决定了图形，每条连线都对应真实步骤。</p></div></article>
-      <article class="example-card"><img src="../../examples/knot.png" alt="Knot 封面，展示几何重叠与投影"><div class="example-card__body"><div class="example-card__mode">项目几何 · 程序库</div><h2 class="repo-name" lang="en" translate="no">Knot</h2><p>几何关系来自这个库本身对重叠与投影的研究，并不是为了装饰而额外添加。</p></div></article>
-      <article class="example-card"><img src="../../examples/ping.png" alt="Ping 封面，从有限运行素材中重构"><div class="example-card__body"><div class="example-card__mode">素材有限 · 适度重构</div><h2 class="repo-name" lang="en" translate="no">Ping</h2><p>可用的运行画面很少，因此只做了必要的重构：把交互讲清楚，但不凭空添加数据面板或不存在的功能。</p></div></article>
+    <section class="site-shell page-hero"><div class="eyebrow">RepoCover 案例</div><h1>不同项目，<span class="title-tail">应该有不同封面。</span></h1><p>9 个项目，9 种视觉方向。点击任意封面即可查看对应的公开 GitHub 仓库。</p></section>
+    <section class="site-shell example-grid" aria-label="RepoCover 案例展示">
+      <a class="example-card" href="https://github.com/onovich/Research"><img src="../../examples/research.png" alt="Research 封面，展示重新设计的双语报告版面与研究台账"><div class="example-card__body"><div class="example-card__mode">编辑式系统 · AI Skill</div><h2 class="repo-name" lang="en" translate="no">Research</h2><p>封面沿用项目的双语编辑风格和研究台账，但没有直接复刻网页界面。</p></div></a>
+      <a class="example-card" href="https://github.com/onovich/PrismDraft"><img src="../../examples/prismdraft.png" alt="PrismDraft 封面，展示多面体 3D 建模形象"><div class="example-card__body"><div class="example-card__mode">项目特征 · 3D</div><h2 class="repo-name" lang="en" translate="no">PrismDraft</h2><p>一个平涂 3D 建模库。封面保留了多面体的空间感，没有把它变成普通的平面几何图案。</p></div></a>
+      <a class="example-card" href="https://github.com/onovich/LitPng"><img src="../../examples/littlepng.png" alt="LittlePNG 封面，展示本地图像处理界面"><div class="example-card__body"><div class="example-card__mode">界面参考 · Web 工具</div><h2 class="repo-name" lang="en" translate="no">LittlePNG</h2><p>界面仍然清楚可认，但浏览器杂项被去掉，任务队列也重新排成了更适合小图分享的画面。</p></div></a>
+      <a class="example-card" href="https://github.com/onovich/DeskMochi"><img src="../../examples/deskmochi.png" alt="DeskMochi 封面，展示桌面陪伴角色"><div class="example-card__body"><div class="example-card__mode">核心视觉 · 桌面应用</div><h2 class="repo-name" lang="en" translate="no">DeskMochi</h2><p>这个桌面陪伴角色本来就很有辨识度，因此封面保留了它，并围绕它重新组织构图。</p></div></a>
+      <a class="example-card" href="https://github.com/onovich/AudioTrim"><img src="../../examples/audiotrim.png" alt="AudioTrim 封面，展示波形编辑控件"><div class="example-card__body"><div class="example-card__mode">流程参考 · 音频工具</div><h2 class="repo-name" lang="en" translate="no">AudioTrim</h2><p>波形、选区和导出状态，比装饰性的音乐符号更能讲清楚这个游戏音频裁切工具。</p></div></a>
+      <a class="example-card" href="https://github.com/onovich/Beat"><img src="../../examples/beat.png" alt="Beat 封面，展示频带与节奏事件"><div class="example-card__body"><div class="example-card__mode">无现成图片 · 程序库</div><h2 class="repo-name" lang="en" translate="no">Beat</h2><p>仓库里没有适合直接做封面的图片，因此把频率能量、阈值、冷却和事件回调变成了画面的核心。</p></div></a>
+      <a class="example-card" href="https://github.com/onovich/JustGoal.skill"><img src="../../examples/justgoal-skill.png" alt="JustGoal.skill 封面，展示分支与审查流程"><div class="example-card__body"><div class="example-card__mode">流程结构 · Codex Skill</div><h2 class="repo-name" lang="en" translate="no">JustGoal.skill</h2><p>分支、并行审查、合并门禁和修复循环决定了图形，每条连线都对应真实步骤。</p></div></a>
+      <a class="example-card" href="https://github.com/onovich/Knot"><img src="../../examples/knot.png" alt="Knot 封面，展示几何重叠与投影"><div class="example-card__body"><div class="example-card__mode">项目几何 · 程序库</div><h2 class="repo-name" lang="en" translate="no">Knot</h2><p>几何关系来自这个库本身对重叠与投影的研究，并不是为了装饰而额外添加。</p></div></a>
+      <a class="example-card" href="https://github.com/onovich/Ping"><img src="../../examples/ping.png" alt="Ping 封面，从有限运行素材中重构"><div class="example-card__body"><div class="example-card__mode">素材有限 · 适度重构</div><h2 class="repo-name" lang="en" translate="no">Ping</h2><p>可用的运行画面很少，因此只做了必要的重构：把交互讲清楚，但不凭空添加数据面板或不存在的功能。</p></div></a>
     </section>
     <section class="section"><div class="site-shell"><div class="section-kicker">试试你的仓库</div><h2 class="section-heading">方向由项目本身决定。</h2><p class="section-intro">RepoCover 会先看项目里已经有什么，再决定怎么呈现。如果项目能在本地运行，请保持预览可用，让它看清真实界面。</p><div class="button-row"><a class="button button--primary" href="../#install">安装 RepoCover</a><a class="button button--secondary" href="https://github.com/onovich/RepoCover">查看源码</a></div></div></section>
   </main>
-  <footer class="site-footer"><div class="site-shell"><div class="site-footer__grid"><div><a class="brand" href="../"><img src="../../assets/repo-cover-mark.svg" alt="" width="38" height="38"><span>RepoCover</span></a><p>根据每个项目实际拥有的内容，为不同仓库生成不同的 GitHub Social Preview。</p></div><nav class="footer-links" aria-label="页脚导航"><a href="./">案例</a><a href="../github-social-preview-guide/">指南</a><a href="../support/">支持</a><a href="../privacy/">隐私</a><a href="../terms/">条款</a><a href="https://github.com/onovich/RepoCover">源码</a></nav></div><div class="footer-bottom"><span>MIT 开源 · © <span data-current-year>2026</span> <a href="https://github.com/onovich">onovich</a></span><span>与 GitHub, Inc. 不存在隶属关系</span></div></div></footer>
+  <footer class="site-footer"><div class="site-shell"><div class="site-footer__grid"><div><a class="brand" href="../"><img src="../../assets/repo-cover-mark.svg" alt="" width="38" height="38"><span>RepoCover</span></a><p>根据每个项目实际拥有的内容，为不同仓库生成不同的 GitHub Social Preview。</p></div><nav class="footer-links" aria-label="页脚导航"><a href="./">案例</a><a href="../github-social-preview-guide/">指南</a><a href="../support/">支持</a><a href="../privacy/">隐私</a><a href="../terms/">条款</a><a href="https://github.com/onovich/RepoCover">源码</a></nav></div><div class="footer-bottom"><span>MIT 开源 · © <span data-current-year>2026</span> onovich</span><span>与 GitHub, Inc. 不存在隶属关系</span></div></div></footer>
   <script src="../../assets/app.js?v=0.1.0" defer></script>
 </body>
 </html>

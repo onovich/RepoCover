@@ -46,27 +46,15 @@ Creating the files does not authorize README edits, uploads, or repository-setti
 
 ## Examples
 
-The [Research case study](https://repo-cover.onovich.com/examples/#research-case-title) shows how a working bilingual report site was simplified and recomposed without losing its identity.
+[Browse the example gallery](https://repo-cover.onovich.com/examples/) for more context. Each image below links to the public repository behind it.
 
-[![Research social preview](examples/research.png)](https://repo-cover.onovich.com/examples/#research-case-title)
-
-The same Skill produced the eight additional covers below. Each one follows its own project rather than a shared template.
-
-| PrismDraft | LittlePNG |
-| --- | --- |
-| ![PrismDraft social preview](examples/prismdraft.png) | ![LittlePNG social preview](examples/littlepng.png) |
-
-| DeskMochi | AudioTrim |
-| --- | --- |
-| ![DeskMochi social preview](examples/deskmochi.png) | ![AudioTrim social preview](examples/audiotrim.png) |
-
-| Beat | JustGoal.skill |
-| --- | --- |
-| ![Beat social preview](examples/beat.png) | ![JustGoal.skill social preview](examples/justgoal-skill.png) |
-
-| Knot | Ping |
-| --- | --- |
-| ![Knot social preview](examples/knot.png) | ![Ping social preview](examples/ping.png) |
+| Research | PrismDraft | LittlePNG |
+| --- | --- | --- |
+| [![Research social preview](examples/research.png)](https://github.com/onovich/Research) | [![PrismDraft social preview](examples/prismdraft.png)](https://github.com/onovich/PrismDraft) | [![LittlePNG social preview](examples/littlepng.png)](https://github.com/onovich/LitPng) |
+| DeskMochi | AudioTrim | Beat |
+| [![DeskMochi social preview](examples/deskmochi.png)](https://github.com/onovich/DeskMochi) | [![AudioTrim social preview](examples/audiotrim.png)](https://github.com/onovich/AudioTrim) | [![Beat social preview](examples/beat.png)](https://github.com/onovich/Beat) |
+| JustGoal.skill | Knot | Ping |
+| [![JustGoal.skill social preview](examples/justgoal-skill.png)](https://github.com/onovich/JustGoal.skill) | [![Knot social preview](examples/knot.png)](https://github.com/onovich/Knot) | [![Ping social preview](examples/ping.png)](https://github.com/onovich/Ping) |
 
 ## How it works
 

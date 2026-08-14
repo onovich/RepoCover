@@ -8,7 +8,7 @@ Use RepoCover as a useful open-source project that introduces onovich and leads 
 
 The primary path is:
 
-`search or social post → RepoCover site → useful case → GitHub repository or onovich profile`
+`search or social post → RepoCover site → RepoCover GitHub repository`
 
 ## Current progress
 
@@ -16,7 +16,7 @@ The primary path is:
 
 - Repository name, description, topics, license, README, Social Preview, and first release are present.
 - English and Simplified Chinese documentation are available.
-- The website and repository identify onovich as the author.
+- The website identifies onovich as the author without adding a separate promotional profile link.
 
 ### 2. Independent domain — complete
 
@@ -28,23 +28,18 @@ The primary path is:
 - Both Cloudflare authoritative nameservers and GitHub's Pages health check validate the CNAME. GitHub's dedicated certificate is active and HTTPS enforcement is enabled.
 - GitHub currently returns one-to-one `301` redirects from the old homepage, Chinese page, examples, guide, images, and parameterized URLs while preserving the path and query string.
 
-### 3. Examples — first complete case ready
+### 3. Examples — neutral gallery ready
 
-- `Research` is the first featured case because it has a useful public repository, a working product, a recognizable interface, and a clear before-to-result design decision.
-- Eight earlier covers remain below it as a visual-range gallery.
-- The next featured case will be selected only after its repository name, public description, live product link, and source material are internally consistent.
-
-Next candidates, in order:
-
-1. `LitPng`: resolve the `LitPng` / `LittlePNG` naming mismatch before publication.
-2. `Inscape`: complete public repository metadata and a stable product/demo link.
-3. `RepoPalette`: confirm the source repository and live product path before writing the case.
+- Nine covers appear at the same level; no owner project is labelled as a featured or especially valuable case.
+- Every card opens the corresponding public GitHub repository so visitors can inspect it without extra promotional framing.
+- `Research` now uses a reconstructed bilingual editorial spread instead of a webpage screenshot.
+- Future additions should improve the range of project types, and independent-user examples should take priority when available.
 
 ### 4. Launch material — ready for review
 
 - Channel-specific images exist for X, LinkedIn, Chinese social feeds, and Product Hunt.
 - English and Chinese launch copy, Show HN copy, community drafts, image descriptions, and UTM links are collected in `docs/LAUNCH_KIT.md`.
-- A follow-up post uses the Research case to promote both RepoCover and another useful onovich project.
+- Launch copy points to the gallery as a whole rather than promoting one owner project as a special case.
 
 ## Domain switch record
 
@@ -79,11 +74,10 @@ Keep the redirect for at least one year. Do not remove the old hostname from sea
 1. Domain switch and live validation — complete.
 2. GitHub repository homepage field — updated to the new domain.
 3. Submit the new sitemap/domain property to Google Search Console if available.
-4. Pin RepoCover and Research on the onovich GitHub profile.
+4. Pin RepoCover on the onovich GitHub profile.
 5. Publish the general launch post with the visual-range image.
-6. Publish the Research case follow-up several days later.
-7. Submit to Show HN after the site and installation flow have survived real visits.
-8. Use early questions to improve the README and site before considering Product Hunt.
+6. Submit to Show HN after the site and installation flow have survived real visits.
+7. Use early questions to improve the README and site before considering Product Hunt.
 
 Public posts and profile pinning remain manual review actions. Do not publish, vote, or comment automatically.
 
@@ -93,7 +87,7 @@ Review after 7, 30, and 90 days:
 
 - GitHub repository unique visitors and referring sites;
 - clones and stars as signs of genuine project interest;
-- visits to the onovich profile and featured-case repositories;
+- clicks from the example gallery to public repositories;
 - Search Console impressions and clicks for `github social preview`, `github repository cover`, `AI repository cover`, and Chinese equivalents;
 - traffic by the UTM sources in the launch kit;
 - installation questions, issue quality, and independent examples.

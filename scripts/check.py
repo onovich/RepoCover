@@ -46,6 +46,17 @@ EXPECTED_EXAMPLES = {
     "prismdraft.png",
     "research.png",
 }
+EXAMPLE_REPOSITORIES = {
+    "Research": "https://github.com/onovich/Research",
+    "PrismDraft": "https://github.com/onovich/PrismDraft",
+    "LittlePNG": "https://github.com/onovich/LitPng",
+    "DeskMochi": "https://github.com/onovich/DeskMochi",
+    "AudioTrim": "https://github.com/onovich/AudioTrim",
+    "Beat": "https://github.com/onovich/Beat",
+    "JustGoal.skill": "https://github.com/onovich/JustGoal.skill",
+    "Knot": "https://github.com/onovich/Knot",
+    "Ping": "https://github.com/onovich/Ping",
+}
 EXPECTED_SOCIAL_ASSETS = {
     "repocover-launch-landscape.png": (1600, 1000),
     "repocover-linkedin-en.png": (1200, 627),
@@ -310,6 +321,14 @@ def check_site() -> None:
                 fail(f"Site build contains an unresolved URL token: {path.relative_to(output)}")
             if "https://blog.onovich.com/RepoCover" in text:
                 fail(f"Site build still refers to the legacy origin: {path.relative_to(output)}")
+            if path.suffix.lower() == ".html" and (
+                'href="https://github.com/onovich"' in text
+                or '"url": "https://github.com/onovich"' in text
+            ):
+                fail(
+                    "Site must not link directly to the author's GitHub profile: "
+                    f"{path.relative_to(output)}"
+                )
 
         for required in (
             "assets/app.js",
@@ -412,6 +431,21 @@ def check_site() -> None:
             if phrase in public_copy:
                 fail(f"Site still contains retired public wording: {phrase}")
 
+        retired_site_copy = (
+            "Browse real covers",
+            "查看真实案例",
+            "Featured case",
+            "Working product",
+            "重点案例",
+            "可运行产品",
+            "Real repositories, recognizable Social Previews",
+            "真实仓库，也能有一眼可认的 Social Preview",
+        )
+        site_copy = homepage_text + homepage_zh_text + examples_text + examples_zh_text
+        for phrase in retired_site_copy:
+            if phrase in site_copy:
+                fail(f"Site still contains retired example wording: {phrase}")
+
         for required_phrase in (
             "Create a distinctive cover for your",
             "为你的代码仓库，",
@@ -432,28 +466,25 @@ def check_site() -> None:
             if required_phrase not in public_copy:
                 fail(f"Site is missing required plain-language copy: {required_phrase}")
 
-        repository_names = (
-            "PrismDraft",
-            "LittlePNG",
-            "DeskMochi",
-            "AudioTrim",
-            "Beat",
-            "JustGoal.skill",
-            "Knot",
-            "Ping",
-            "Research",
-        )
         for relative, text in (
             ("examples/index.html", examples_text),
             ("zh/examples/index.html", examples_zh_text),
         ):
-            for repository_name in repository_names:
+            for repository_name, repository_url in EXAMPLE_REPOSITORIES.items():
                 if not re.search(
                     rf'<h2[^>]*translate="no"[^>]*>{re.escape(repository_name)}</h2>',
                     text,
                 ):
                     fail(
                         f"Repository name must remain untranslated in {relative}: "
+                        f"{repository_name}"
+                    )
+                if not re.search(
+                    rf'<a\s+class="example-card"\s+href="{re.escape(repository_url)}"',
+                    text,
+                ):
+                    fail(
+                        f"Example must link to its public repository in {relative}: "
                         f"{repository_name}"
                     )
 
@@ -509,6 +540,22 @@ def check_images() -> None:
             str(ROOT / "docs" / "social-preview.png"),
             "--svg",
             str(product_svg),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    json.loads(completed.stdout)
+
+    research_svg = ROOT / "examples" / "research.svg"
+    completed = subprocess.run(
+        [
+            sys.executable,
+            str(validator),
+            str(ROOT / "examples" / "research.png"),
+            "--svg",
+            str(research_svg),
         ],
         check=True,
         capture_output=True,

@@ -443,17 +443,6 @@ a {
   margin: 0 0 18px;
 }
 
-.story-copy .story-author {
-  margin-top: 28px;
-}
-
-.story-author a {
-  color: var(--gold);
-  font-weight: 800;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
-}
-
 .usecase-header {
   display: grid;
   align-items: end;
@@ -665,12 +654,20 @@ a {
 }
 
 .cover-tile {
+  display: block;
   overflow: hidden;
   margin: 0;
+  color: inherit;
   background: white;
   border: 1px solid rgb(16 47 64 / 12%);
   border-radius: 18px;
   box-shadow: 0 14px 38px rgb(8 38 53 / 8%);
+  text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.cover-tile figure {
+  margin: 0;
 }
 
 .cover-tile img {
@@ -680,8 +677,22 @@ a {
   transition: transform 280ms ease;
 }
 
-.cover-tile:hover img {
+.cover-tile:hover,
+.cover-tile:focus-visible {
+  border-color: rgb(20 96 123 / 34%);
+  box-shadow: 0 18px 46px rgb(8 38 53 / 13%);
+  transform: translateY(-2px);
+}
+
+.cover-tile:hover img,
+.cover-tile:focus-visible img {
   transform: scale(1.012);
+}
+
+.cover-tile:focus-visible,
+.example-card:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
 }
 
 .cover-tile figcaption {
@@ -774,17 +785,35 @@ a {
 }
 
 .example-card {
+  display: flex;
   overflow: hidden;
+  color: inherit;
   background: var(--paper-bright);
   border: 1px solid rgb(16 47 64 / 12%);
   border-radius: 22px;
   box-shadow: 0 16px 44px rgb(8 38 53 / 7%);
+  flex-direction: column;
+  text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .example-card img {
   width: 100%;
   aspect-ratio: 2 / 1;
   object-fit: cover;
+  transition: transform 280ms ease;
+}
+
+.example-card:hover,
+.example-card:focus-visible {
+  border-color: rgb(20 96 123 / 34%);
+  box-shadow: 0 20px 52px rgb(8 38 53 / 13%);
+  transform: translateY(-3px);
+}
+
+.example-card:hover img,
+.example-card:focus-visible img {
+  transform: scale(1.012);
 }
 
 .example-card__body {
@@ -805,90 +834,8 @@ a {
   color: var(--muted);
 }
 
-.featured-case {
-  display: grid;
-  overflow: hidden;
-  background: var(--paper-bright);
-  border: 1px solid rgb(16 47 64 / 12%);
-  border-radius: 30px;
-  box-shadow: 0 24px 70px rgb(8 38 53 / 10%);
-  grid-template-columns: minmax(0, 1.28fr) minmax(340px, 0.72fr);
-}
-
-.featured-case__visual {
-  display: grid;
-  min-height: 100%;
-  padding: 24px;
-  place-items: center;
-  background: #062c24;
-}
-
-.featured-case__visual img {
-  width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 18px 50px rgb(0 0 0 / 24%);
-}
-
-.featured-case__body {
-  padding: 42px;
-}
-
-.featured-case__body h2,
-.featured-case__body h3 {
-  margin: 12px 0 0;
-  font-family: "Arial Black", Aptos Display, "Segoe UI", sans-serif;
-  font-size: clamp(2.7rem, 4.5vw, 4.6rem);
-  letter-spacing: -0.06em;
-  line-height: 0.98;
-}
-
-.featured-case__lead {
-  margin: 20px 0 0;
-  color: #3d5d6b;
-  font-size: 1.05rem;
-}
-
-.case-notes {
-  margin: 30px 0 0;
-}
-
-.case-notes div {
-  padding: 16px 0;
-  border-top: 1px solid rgb(16 47 64 / 12%);
-}
-
-.case-notes dt {
-  color: #23708c;
-  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-  font-size: 0.68rem;
-  font-weight: 850;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.case-notes dd {
-  margin: 6px 0 0;
-  color: var(--muted);
-}
-
-.featured-case .button-row {
-  margin-top: 28px;
-}
-
-.featured-case--home {
-  margin-top: 48px;
-}
-
-.gallery-intro {
-  padding-top: 100px;
-}
-
-.gallery-intro .section-intro {
-  max-width: 760px;
-}
-
-.gallery-intro + .example-grid {
-  margin-top: 42px;
+.page-hero + .example-grid {
+  margin-top: 8px;
 }
 
 .guide-layout {
@@ -1061,14 +1008,9 @@ a {
 
   .story-grid,
   .usecase-header,
-  .guide-layout,
-  .featured-case {
+  .guide-layout {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-
-  .featured-case {
-    gap: 0;
   }
 
   .toc {
@@ -1158,23 +1100,6 @@ a {
 
   .section {
     padding: 76px 0;
-  }
-
-  .featured-case__visual {
-    padding: 12px;
-  }
-
-  .featured-case__body {
-    padding: 28px 24px 32px;
-  }
-
-  .featured-case__body h2,
-  .featured-case__body h3 {
-    font-size: 2.7rem;
-  }
-
-  .gallery-intro {
-    padding-top: 76px;
   }
 
   .showcase-header,
