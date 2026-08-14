@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Social Preview 指南 — 尺寸、设计与设置方法</title>
+  <meta name="description" content="一份实用的 GitHub Social Preview 指南：1280×640 尺寸、上传设置、截图清理、仓库专属封面设计与验收方法。">
+  <meta name="theme-color" content="#0c4261">
+  <link rel="canonical" href="https://onovich.github.io/RepoCover/zh/github-social-preview-guide/">
+  <link rel="alternate" hreflang="en" href="https://onovich.github.io/RepoCover/github-social-preview-guide/">
+  <link rel="alternate" hreflang="zh-CN" href="https://onovich.github.io/RepoCover/zh/github-social-preview-guide/">
+  <link rel="alternate" hreflang="x-default" href="https://onovich.github.io/RepoCover/github-social-preview-guide/">
+  <link rel="icon" href="../../assets/repo-cover-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/styles.css?v=0.1.0">
+  <meta property="og:type" content="article"><meta property="og:title" content="GitHub Social Preview：尺寸、设计与设置"><meta property="og:description" content="如何根据仓库真实证据设计清晰的 1280×640 封面，而不是直接使用截图或套用模板。"><meta property="og:url" content="https://onovich.github.io/RepoCover/zh/github-social-preview-guide/"><meta property="og:image" content="https://onovich.github.io/RepoCover/assets/social-preview.png"><meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-shell topbar"><a class="brand" href="../"><img src="../../assets/repo-cover-mark.svg" alt="" width="38" height="38"><span>RepoCover</span></a><div class="topbar__right"><nav class="nav-links" aria-label="主导航"><a href="../examples/">案例</a><a href="./" aria-current="page">指南</a><a href="https://github.com/onovich/RepoCover">GitHub</a></nav><nav class="language-links" aria-label="语言"><a href="../../github-social-preview-guide/" data-language-link="en">EN</a><a href="./" data-language-link="zh-CN" aria-current="true">中文</a></nav></div></header>
+
+  <main id="main">
+    <article>
+      <header class="site-shell page-hero">
+        <div class="eyebrow">实用指南</div>
+        <h1>GitHub Social Preview：尺寸、设计与设置。</h1>
+        <p>仓库封面只需要完成一个小任务：在链接被点开之前，让人认出这个项目。这份指南会讲清楚图片规格、截图该保留什么、该删掉什么，以及如何上传。</p>
+        <div class="article-meta">更新于 2026 年 8 月 14 日 · 约 8 分钟</div>
+      </header>
+
+      <div class="site-shell guide-layout">
+        <nav class="toc" aria-label="本页目录"><strong>本页目录</strong><a href="#what">它是什么</a><a href="#size">尺寸与文件要求</a><a href="#design">从证据开始设计</a><a href="#screenshots">如何使用截图</a><a href="#workflow">可靠工作流</a><a href="#upload">在 GitHub 上传</a><a href="#mistakes">常见问题</a><a href="#repocover">用 RepoCover 生成</a></nav>
+        <div class="guide-content">
+          <h2 id="what">什么是 GitHub Social Preview？</h2>
+          <p>Social Preview 是 GitHub 为仓库链接提供的预览图片。仓库链接被分享到支持 Open Graph 的网站或聊天工具时，它会给仓库名和描述补充一个视觉身份。仓库管理员可以在设置中上传这张图。</p>
+          <p>它并不等于 README 顶图，虽然你可以选择复用同一份视觉素材。它本质上属于仓库的分享元数据。</p>
+
+          <h2 id="size">GitHub Social Preview 的尺寸与文件要求</h2>
+          <p>GitHub 接受小于 1 MB 的 PNG、JPG 或 GIF。官方文档建议图片至少为 640×320，并把 1280×640 列为最佳显示尺寸。两者都是 2:1。</p>
+          <ul><li><strong>推荐制作尺寸：</strong>1280×640 像素。</li><li><strong>宽高比：</strong>2:1。</li><li><strong>最大文件：</strong>小于 1 MB。</li><li><strong>支持格式：</strong>PNG、JPG 或 GIF。</li></ul>
+          <div class="guide-callout"><strong>一个实用标准</strong><p>按 1280×640 设计，再缩到 320×160 检查。如果仓库名和核心含义在缩略图里消失了，这张封面就还没有完成。</p></div>
+          <p>产品要求可能变化，请始终以 <a href="https://docs.github.com/zh/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview">GitHub 官方 Social Preview 文档</a>为准。</p>
+
+          <h2 id="design">从仓库证据开始设计</h2>
+          <p>最快的做法，是把仓库名放左边，再在右边加一块通用装饰。但这样也最容易抹掉仓库本身的特点。</p>
+          <p>更好的封面从三个问题开始：</p>
+          <ol><li><strong>承诺：</strong>这个项目让用户做什么？</li><li><strong>证据：</strong>仓库能诚实地展示什么来支持这个承诺？</li><li><strong>排除：</strong>哪些次要信息、界面碎片和无法证实的卖点不应该出现？</li></ol>
+          <p>答案可能是一个工作界面、一个角色、一个 3D 物体、一张图表、一段波形，也可能是从项目真实机制中推导出的视觉系统。只知道它属于“游戏”“工具”或“程序库”还不够。</p>
+
+          <h2 id="screenshots">如何使用截图，而不是直接发布截图</h2>
+          <p>截图可能是最强证据，但仍然不是合格封面。浏览器边框、被切断的标题、调试文字、无关面板、过小控件和空场景，在缩小之后往往更难看。</p>
+          <h3>应该保留</h3>
+          <ul><li>能让产品被认出来的核心交互或结果；</li><li>项目自带的插画、角色、物体和有辨识度的配色关系；</li><li>足以解释动作的界面上下文。</li></ul>
+          <h3>应该删除或重构</h3>
+          <ul><li>浏览器栏、调试层、意外裁切和半条 UI；</li><li>封面已经有标题时，截图中重复出现的标题；</li><li>遮住真实玩法或产品任务的大片空白；</li><li>没有语义作用的连线、面板与装饰线。</li></ul>
+          <div class="guide-callout"><strong>一个重要边界</strong><p>保留身份，不必保留每一个像素。原材料已经好看且有代表性时，少改；杂乱或缺漏明显时，多演绎一点，但不要超出仓库证据。</p></div>
+
+          <h2 id="workflow">一套可靠的封面工作流</h2>
+          <ol>
+            <li><strong>查看仓库。</strong>阅读 README、关键代码、项目规则、截图、SVG 与主视觉素材。</li>
+            <li><strong>能运行时就运行。</strong>一个可用的本地 Web 界面通常比远端文件树提供更多信息。</li>
+            <li><strong>诊断素材。</strong>判断什么好看、什么有辨识度、什么冗余、什么缺失、什么容易误导。</li>
+            <li><strong>选择制作方式。</strong>排版与结构优先用可编辑 SVG；只有截图或插画仍是最清晰证据时才使用它。</li>
+            <li><strong>为缩略图构图。</strong>让仓库名、核心承诺和主要证据在 320×160 时仍然清楚。</li>
+            <li><strong>机械校验。</strong>确认 1280×640、小于 1 MB，并保留有效的可编辑源文件。</li>
+            <li><strong>检查明暗背景。</strong>链接卡片会出现在不同环境里。</li>
+          </ol>
+
+          <h2 id="upload">如何在 GitHub 设置 Social Preview</h2>
+          <ol><li>打开 GitHub 上的目标仓库。</li><li>进入 <strong>Settings</strong>，你需要仓库管理员权限。</li><li>找到 <strong>Social preview</strong> 区域。</li><li>点击 <strong>Edit</strong>，上传 PNG、JPG 或 GIF。</li><li>保存后打开公开仓库页，并重新检查链接预览。其他网站的缓存可能需要一段时间才会刷新。</li></ol>
+          <p>GitHub 界面与要求可能变化，最后请以<a href="https://docs.github.com/zh/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview">官方设置说明</a>为准。</p>
+
+          <h2 id="mistakes">常见问题</h2>
+          <h3>文字在缩略图里读不清</h3><p>很长的功能列表和小字说明，在 1280 像素时看似正常，缩小后会完全消失。最好只保留一个承诺和少量有证据的要点。</p>
+          <h3>标题卡挡住了截图里最有用的部分</h3><p>固定把标题放在左边，可能盖住导航、玩法或产品结果。先判断截图证明什么，再决定裁切和标题位置。</p>
+          <h3>改变了项目原有的维度</h3><p>3D 或 3D 加三渲二的项目，不应该因为 SVG 好画，就被压成一个扁平图标。维度本身就是身份的一部分。</p>
+          <h3>加入没有意义的线</h3><p>连线会暗示关系。它应该连接真实端点、表达真实流程、分隔真实区域，或被限制在图表范围内。否则就删掉。</p>
+          <h3>把没有观察到的东西当成证据</h3><p>只看静态文件，不能证明构建成功、游戏运行或场景正常。画面中的事实必须停留在实际查看过的证据范围内。</p>
+
+          <h2 id="repocover">使用 RepoCover 生成 GitHub Social Preview</h2>
+          <p>RepoCover 把上面的流程做成了一个 Codex Skill。它会输出可编辑的 SVG 和精确的 1280×640 PNG，检查原尺寸与缩略图，并把上传 GitHub 保留为另一次明确授权。</p>
+          <div class="install-panel"><div><div class="mini-label">安装</div><pre id="guide-install" tabindex="0">使用 $skill-installer，从 onovich/RepoCover 的 skill/repo-cover 安装 Skill。</pre></div><button class="copy-button" type="button" data-copy="#guide-install" data-copied="已复制">复制</button></div>
+          <div class="button-row"><a class="button button--primary" href="https://github.com/onovich/RepoCover">在 GitHub 获取 RepoCover</a><a class="button button--secondary" href="../examples/">查看生成案例</a></div>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="site-shell"><div class="site-footer__grid"><div><a class="brand" href="../"><img src="../../assets/repo-cover-mark.svg" alt="" width="38" height="38"><span>RepoCover</span></a><p>一个为不同仓库生成不同 GitHub Social Preview 的独立开源 Codex Skill。</p></div><nav class="footer-links" aria-label="页脚导航"><a href="../examples/">案例</a><a href="./">指南</a><a href="../support/">支持</a><a href="../privacy/">隐私</a><a href="../terms/">条款</a><a href="https://github.com/onovich/RepoCover">源码</a></nav></div><div class="footer-bottom"><span>MIT 开源 · © <span data-current-year>2026</span> onovich</span><span>与 GitHub, Inc. 不存在隶属关系</span></div></div></footer>
+  <script src="../../assets/app.js?v=0.1.0" defer></script>
+</body>
+</html>

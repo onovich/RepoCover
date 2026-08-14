@@ -9,6 +9,8 @@
 - [ ] The installable directory contains no repository-only documentation.
 - [ ] `SKILL.md` routes to `common-quality.md`, `source-material.md`, `cold-start.md`, `version-regression.md`, and `design-ledger-template.md` without requiring every route for every task.
 - [ ] Every relative Markdown link in the installable skill resolves.
+- [ ] `skills/repo-cover/` matches the canonical `skill/repo-cover/` byte for byte.
+- [ ] The root `.codex-plugin/plugin.json` passes the official plugin validator.
 
 ## Behavior
 
@@ -32,3 +34,5 @@
 - [ ] GitHub affiliation disclaimer is visible.
 - [ ] Release notes explain user-facing changes and validation evidence.
 - [ ] Tag and source commit are immutable and documented.
+- [ ] GitHub Pages is live and the English/Chinese home, examples, guide, support, privacy, and terms routes resolve.
+- [ ] Canonical URLs, `hreflang`, sitemap, robots, and local site references pass repository checks.

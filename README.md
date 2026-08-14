@@ -2,6 +2,8 @@
 
 [简体中文](README.zh-CN.md)
 
+[Website](https://onovich.github.io/RepoCover/) · [Examples](https://onovich.github.io/RepoCover/examples/) · [GitHub Social Preview guide](https://onovich.github.io/RepoCover/github-social-preview-guide/)
+
 ## About
 
 I know many programmers are not good at packaging their repositories. I am the same: I like keeping my head down and building, until I ended up with more than 300 repositories that almost no one noticed. Now that vibe coding is everywhere, I have started to think that giving passers-by a reason to look twice might matter.

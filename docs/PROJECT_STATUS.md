@@ -10,18 +10,20 @@ Last updated: 2026-08-14.
 - Installable skill: `skill/repo-cover`
 - Invocation: `$repo-cover`
 - License: MIT
+- Website: `https://onovich.github.io/RepoCover/`
+- Skills-only plugin manifest: `.codex-plugin/plugin.json`
 - Initial implementation migrated from the locally tested `github-preview` skill.
 
 RepoCover now supports:
 
-- one local repository or an authenticated remote-only repository;
-- portfolio inventory and screening before bulk generation;
-- empty, boilerplate, and extremely incomplete repository detection, including Unity-specific boilerplate discounting;
+- one local or remote repository, with explicit evidence limits when no runtime can be reached;
 - source-quality diagnosis, selective extraction, bounded reconstruction, and seam-integrity review;
 - first-use cold-start composition when no usable cover, screenshot, brand mark, or primary visual exists;
 - versioned candidates, no-regression scoring, and reversible promotion;
 - exact editable SVG, `1280×640` PNG under 1 MB, and light/dark `320×160` review sheets;
 - separately authorized GitHub upload and public `og:image` verification.
+
+The public website includes English and Simplified Chinese landing pages, an eight-example gallery, a practical GitHub Social Preview guide, support, privacy, and terms pages. GitHub Pages is deployed through the official Pages Actions workflow. The repository root is also packaged as a skills-only Codex plugin. `skill/repo-cover/` remains the single source of truth; `skills/repo-cover/` is a generated plugin-distribution copy enforced by byte-for-byte checks.
 
 ## Validation evidence
 
@@ -96,11 +98,9 @@ For skill metadata validation, run the available `skill-creator/scripts/quick_va
 
 ## Recommended next work
 
-1. Perform a clean installation from the public GitHub path into a disposable destination.
-2. Run remote CI on Linux, Windows, and macOS for the current skill structure and expanded example set.
-3. Decide the next release version, write release notes around portfolio triage, source diagnosis, cold-start inference, and no-regression versioning, then tag only after CI passes.
-4. Set or refresh the repository description, topics, and social preview; verify the public `og:image` after upload.
-5. Collect independent-user examples before treating the owner-run portfolio result as general external validation.
+1. Collect independent-user examples before treating the owner-run portfolio result as general external validation.
+2. Record Pages search impressions and repository traffic after the first launch period.
+3. Use external feedback to prepare a later release instead of adding features for promotion alone.
 
 ## Known limitations
 

@@ -1,0 +1,45 @@
+{
+  "name": "repo-cover",
+  "version": "0.1.0",
+  "description": "Turn repository evidence into editable, project-specific GitHub Social Preview images.",
+  "author": {
+    "name": "onovich",
+    "url": "https://github.com/onovich"
+  },
+  "homepage": "https://onovich.github.io/RepoCover/",
+  "repository": "https://github.com/onovich/RepoCover",
+  "license": "MIT",
+  "keywords": [
+    "codex-skill",
+    "github-social-preview",
+    "open-graph-image",
+    "repository-branding"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "RepoCover",
+    "shortDescription": "Design social previews from real repository evidence.",
+    "longDescription": "RepoCover reads a local or remote repository before composing an editable 1280×640 GitHub Social Preview. It preserves useful screenshots and project artwork, infers a truthful visual direction when no hero image exists, and validates the final SVG and PNG.",
+    "developerName": "onovich",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "websiteURL": "https://onovich.github.io/RepoCover/",
+    "privacyPolicyURL": "https://onovich.github.io/RepoCover/privacy/",
+    "termsOfServiceURL": "https://onovich.github.io/RepoCover/terms/",
+    "defaultPrompt": [
+      "Read this repository and create a validated GitHub Social Preview.",
+      "Improve this repository's existing social preview without losing its identity.",
+      "Create a repository cover even though this project has no hero image."
+    ],
+    "brandColor": "#0C4261",
+    "composerIcon": "./assets/repo-cover-mark.svg",
+    "logo": "./assets/repo-cover-mark.svg",
+    "logoDark": "./assets/repo-cover-mark.svg",
+    "screenshots": [
+      "./assets/plugin-showcase.png",
+      "./assets/launch-mosaic.png"
+    ]
+  }
+}

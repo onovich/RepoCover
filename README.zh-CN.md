@@ -2,6 +2,8 @@
 
 [English](README.md)
 
+[网站](https://onovich.github.io/RepoCover/zh/) · [案例](https://onovich.github.io/RepoCover/zh/examples/) · [GitHub Social Preview 指南](https://onovich.github.io/RepoCover/zh/github-social-preview-guide/)
+
 ## 关于
 
 我知道很多程序员并不擅长包装自己的仓库，我自己也一样：喜欢埋头苦干，直到写出了三百多个几乎无人问津的仓库。在 vibe coding 大行其道的今天，我开始意识到，让走过路过的人愿意多看一眼，或许有意义。
