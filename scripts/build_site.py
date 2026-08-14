@@ -25,6 +25,8 @@ def build(output: Path) -> None:
 
     copy_file(ROOT / "docs" / "social-preview.png", output / "assets" / "social-preview.png")
     copy_file(ROOT / "assets" / "repo-cover-mark.svg", output / "assets" / "repo-cover-mark.svg")
+    for image in sorted((ROOT / "assets" / "social").glob("*.png")):
+        copy_file(image, output / "assets" / "social" / image.name)
 
     (output / ".nojekyll").write_text("", encoding="utf-8")
 

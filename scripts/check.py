@@ -2,6 +2,7 @@
 
 import json
 import re
+import struct
 import subprocess
 import sys
 import tempfile
@@ -20,6 +21,9 @@ PLUGIN_SKILL = ROOT / "skills" / "repo-cover"
 SITE = ROOT / "site"
 TEXT_SUFFIXES = {
     ".json",
+    ".html",
+    ".css",
+    ".js",
     ".md",
     ".mjs",
     ".py",
@@ -40,6 +44,18 @@ EXPECTED_EXAMPLES = {
     "littlepng.png",
     "ping.png",
     "prismdraft.png",
+}
+EXPECTED_SOCIAL_ASSETS = {
+    "repocover-launch-landscape.png": (1600, 1000),
+    "repocover-linkedin-en.png": (1200, 627),
+    "repocover-linkedin-zh.png": (1200, 627),
+    "repocover-portrait-en.png": (1080, 1350),
+    "repocover-portrait-zh.png": (1080, 1350),
+    "repocover-product-hunt-gallery.png": (1270, 760),
+    "repocover-product-hunt-thumbnail.png": (240, 240),
+    "repocover-square-en.png": (1080, 1080),
+    "repocover-square-zh.png": (1080, 1080),
+    "repocover-x-en.png": (1280, 640),
 }
 REQUIRED_REFERENCES = {
     "cold-start.md",
@@ -293,6 +309,50 @@ def check_site() -> None:
             if not (output / required).is_file():
                 fail(f"Site build is missing {required}")
 
+        for filename in EXPECTED_SOCIAL_ASSETS:
+            required = output / "assets" / "social" / filename
+            if not required.is_file():
+                fail(f"Site build is missing assets/social/{filename}")
+
+        seo_pages = (
+            "index.html",
+            "zh/index.html",
+            "examples/index.html",
+            "zh/examples/index.html",
+            "github-social-preview-guide/index.html",
+            "zh/github-social-preview-guide/index.html",
+        )
+        required_social_metadata = (
+            'property="og:site_name"',
+            'property="og:locale"',
+            'property="og:image:type"',
+            'property="og:image:width"',
+            'property="og:image:height"',
+            'property="og:image:alt"',
+            'name="twitter:title"',
+            'name="twitter:description"',
+            'name="twitter:image"',
+            'name="twitter:image:alt"',
+        )
+        for relative in seo_pages:
+            text = (output / relative).read_text(encoding="utf-8")
+            for marker in required_social_metadata:
+                if marker not in text:
+                    fail(f"SEO page is missing {marker}: {relative}")
+            json_ld_blocks = re.findall(
+                r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+                text,
+                re.DOTALL,
+            )
+            if not json_ld_blocks:
+                fail(f"SEO page is missing JSON-LD: {relative}")
+            for block in json_ld_blocks:
+                json.loads(block)
+
+        sitemap_text = (output / "sitemap.xml").read_text(encoding="utf-8")
+        if sitemap_text.count('hreflang="x-default"') < 6:
+            fail("Sitemap must include x-default for every bilingual content page")
+
         homepage_text = (output / "index.html").read_text(encoding="utf-8")
         homepage_zh_text = (output / "zh" / "index.html").read_text(encoding="utf-8")
         examples_text = (output / "examples" / "index.html").read_text(encoding="utf-8")
@@ -302,7 +362,10 @@ def check_site() -> None:
 
         retired_public_copy = (
             "300+",
+            "more than 300 repositories",
+            "三百多",
             "restart Codex",
+            "Restart Codex",
             "重启 Codex",
             "hero image",
             "Hero asset",
@@ -322,7 +385,17 @@ def check_site() -> None:
             "pretending an earlier cover exists",
             "也不假设以前已有封面",
         )
-        public_copy = homepage_text + homepage_zh_text + examples_text + examples_zh_text
+        repository_copy = (ROOT / "README.md").read_text(encoding="utf-8")
+        repository_copy += (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+        launch_copy = (ROOT / "docs" / "LAUNCH_KIT.md").read_text(encoding="utf-8")
+        public_copy = (
+            homepage_text
+            + homepage_zh_text
+            + examples_text
+            + examples_zh_text
+            + repository_copy
+            + launch_copy
+        )
         for phrase in retired_public_copy:
             if phrase in public_copy:
                 fail(f"Site still contains retired public wording: {phrase}")
@@ -373,6 +446,27 @@ def check_site() -> None:
 
 
 def check_images() -> None:
+    social_directory = ROOT / "assets" / "social"
+    actual_social_assets = {path.name for path in social_directory.glob("*.png")}
+    if actual_social_assets != set(EXPECTED_SOCIAL_ASSETS):
+        fail(
+            "Social asset set mismatch: "
+            f"expected {sorted(EXPECTED_SOCIAL_ASSETS)}, got {sorted(actual_social_assets)}"
+        )
+    for filename, expected_dimensions in EXPECTED_SOCIAL_ASSETS.items():
+        image = social_directory / filename
+        header = image.read_bytes()[:24]
+        if len(header) != 24 or header[:8] != b"\x89PNG\r\n\x1a\n":
+            fail(f"Social asset is not a valid PNG: {filename}")
+        actual_dimensions = struct.unpack(">II", header[16:24])
+        if actual_dimensions != expected_dimensions:
+            fail(
+                f"Social asset dimensions mismatch for {filename}: "
+                f"expected {expected_dimensions}, got {actual_dimensions}"
+            )
+        if image.stat().st_size >= 5 * 1024 * 1024:
+            fail(f"Social asset exceeds 5 MB: {filename}")
+
     validator = SKILL / "scripts" / "validate_preview.py"
     images = sorted((ROOT / "examples").glob("*.png"))
     actual_examples = {image.name for image in images}
@@ -421,7 +515,8 @@ def main() -> None:
     check_images()
     print(
         "RepoCover checks passed: metadata, plugin, skill references, site, UTF-8, "
-        f"syntax, and {len(EXPECTED_EXAMPLES) + 1} preview images."
+        f"syntax, {len(EXPECTED_EXAMPLES) + 1} preview images, and "
+        f"{len(EXPECTED_SOCIAL_ASSETS)} social assets."
     )
 
 

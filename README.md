@@ -6,51 +6,47 @@
 
 ## About
 
-I know many programmers are not good at packaging their repositories. I am the same: I like keeping my head down and building, until I ended up with more than 300 repositories that almost no one noticed. Now that vibe coding is everywhere, I have started to think that giving passers-by a reason to look twice might matter.
+Many programmers are better at building projects than presenting them. I am one of them. As AI coding makes it easier to create more, giving people a clear reason to look twice may matter.
 
 That is how RepoCover came to be. I made it in a day. It looked pretty good, so I started using it myself.
 
 ![RepoCover social preview](docs/social-preview.png)
 
-## Why RepoCover
+## What RepoCover does
 
-RepoCover is a Codex skill that lets AI understand a project before designing its repository cover. It works with local and remote projects. Previewable local projects—especially web projects with an existing interface—usually provide richer visual evidence and produce the strongest results.
+RepoCover is an open-source AI coding Skill that reads a repository before designing its GitHub Social Preview. It creates an editable SVG and an exact `1280×640` PNG under 1 MB.
 
-- **Reads before it draws:** it checks the README, code, project rules, and visual assets before deciding what the cover should say and show.
-- **Makes good source material better:** it keeps recognizable screenshots, artwork, and brand elements, while removing clutter and improving the crop and composition.
-- **Still works without a hero image:** when no useful screenshot, logo, or illustration exists, it builds a visual direction from the project's real objects, actions, and results instead of applying a template.
-- **Keeps the project recognizable:** the palette, subject, dimensionality, and visual language follow the repository rather than one shared house style.
-- **Editable and GitHub Social Preview ready:** GitHub accepts PNG, JPG, or GIF files under 1 MB, recommends at least `640×320`, and identifies `1280×640` as the best-display size. RepoCover deliberately outputs an exact `1280×640` PNG under 1 MB and keeps an editable SVG source beside it. See [GitHub's official Social Preview documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview).
-- **Safe by default:** image creation never authorizes README edits, uploads, or repository-setting changes.
+- **Reads before it designs:** it looks at the README, code, interface, and project assets before deciding what the cover should show.
+- **Chooses a visual approach that fits the project:** a working interface, an existing main visual, and a project with no suitable image each need a different treatment.
+- **Improves useful source material:** recognizable screenshots, artwork, and brand elements can be kept, cleaned up, and recomposed instead of pasted into a fixed layout.
+- **Still works without a suitable image:** when needed, it can derive a visual direction from what the project actually does rather than applying a template.
+- **Works with local and remote repositories:** projects that can be previewed locally—especially web projects with an existing interface—usually provide the best source material.
+- **Ready for GitHub Social Preview:** GitHub accepts PNG, JPG, or GIF files under 1 MB, recommends at least `640×320`, and identifies `1280×640` as the best display size. See [GitHub's Social Preview documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview).
 
 ## Quick start
 
-Install from this repository:
+Open your AI agent—Codex is recommended—and send these two messages in order:
 
 ```text
-Use $skill-installer to install onovich/RepoCover from skill/repo-cover.
+Install the Skill from https://github.com/onovich/RepoCover.
 ```
-
-Restart Codex. Open a local repository or provide a remote repository URL, then ask:
 
 ```text
-Use $repo-cover to understand this project and create a validated GitHub Social Preview.
+Use $repo-cover to create a cover for the current project.
 ```
 
-If the project has a runnable local preview or an existing web interface, keep it available during generation. Real product evidence usually improves the result.
-
-RepoCover normally writes:
+RepoCover writes:
 
 ```text
 docs/social-preview.svg
 docs/social-preview.png
 ```
 
-By default, RepoCover only creates and validates the image files. It does not change a README, upload an image, or edit repository settings unless separately requested.
+Creating the files does not authorize README edits, uploads, or repository-setting changes. Ask for those separately when you want them.
 
 ## Examples
 
-These examples come from games, tools, libraries, and Codex skills. Their layouts and materials differ because the project—not a shared template—leads the design.
+The same Skill produced all eight covers below. Each one follows its own project rather than a shared template.
 
 | PrismDraft | LittlePNG |
 | --- | --- |
@@ -60,24 +56,23 @@ These examples come from games, tools, libraries, and Codex skills. Their layout
 | --- | --- |
 | ![DeskMochi social preview](examples/deskmochi.png) | ![AudioTrim social preview](examples/audiotrim.png) |
 
-| [Beat](https://github.com/onovich/Beat) · symbolic audio model | [JustGoal.skill](https://github.com/onovich/JustGoal.skill) · branching workflow |
+| Beat | JustGoal.skill |
 | --- | --- |
 | ![Beat social preview](examples/beat.png) | ![JustGoal.skill social preview](examples/justgoal-skill.png) |
 
-| [Knot](https://github.com/onovich/Knot) · geometric relations | [Ping](https://github.com/onovich/Ping) · weak-source reconstruction |
+| Knot | Ping |
 | --- | --- |
 | ![Knot social preview](examples/knot.png) | ![Ping social preview](examples/ping.png) |
 
 ## How it works
 
-1. Read the README, code, repository rules, and available visual assets.
-2. Work out what the project does, what makes it recognizable, and what the repository can honestly support.
-3. Keep and recompose attractive source material; remove distracting UI or clutter. If no useful image exists, infer a visual direction from the project itself.
-4. Choose a composition and visual treatment that fit this project instead of reusing one template.
-5. Export an editable SVG and an exact `1280×640` PNG under 1 MB, then check both full-size and thumbnail readability on light and dark backgrounds.
-6. Stop at the generated files unless the user separately asks for an upload or repository change.
+1. Read the repository and identify what the project does.
+2. Check whether the available interface, artwork, or other project material is suitable for a small shared image.
+3. Keep what already works, remove distracting details, and add only what the composition needs. If no useful image exists, derive a visual direction from the project itself.
+4. Export an editable SVG and an exact `1280×640` PNG under 1 MB.
+5. Check the result at full size and thumbnail size on light and dark backgrounds.
 
-Detailed agent instructions and conditionally loaded references live in [`skill/repo-cover/`](skill/repo-cover/).
+Detailed Skill instructions live in [`skill/repo-cover/`](skill/repo-cover/).
 
 ## Development
 
@@ -93,7 +88,7 @@ Run the repository checks:
 python scripts/check.py
 ```
 
-The check validates metadata, UTF-8 without BOM, source syntax, all portable example images, and the checked-in product preview. Project state and next-session guidance are in [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md); release gates are in [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md).
+Release notes and project checks are documented in [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md).
 
 ## License
 

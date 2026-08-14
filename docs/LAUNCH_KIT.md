@@ -1,120 +1,220 @@
-# RepoCover launch kit
+# RepoCover promotion kit
 
-This document contains ready-to-use public copy for RepoCover `v0.1.0`. Keep claims aligned with the repository and replace a channel URL only when that channel is actually used.
+Ready-to-review launch copy and asset assignments for RepoCover. Edit any first-person text into your own voice before posting, and recheck each platform's current form and community rules on the day of publication.
 
 ## Core positioning
 
-**One line:** RepoCover is a Codex Skill that reads a repository before designing an editable `1280×640` GitHub Social Preview from real project evidence.
+**One line:** RepoCover is an open-source AI coding Skill that reads a repository before designing its GitHub Social Preview.
 
-**Short hook:** I built 300+ repositories that almost no one noticed, so I made a Codex Skill that reads a repo before designing its social preview.
+**Short explanation:** It chooses a visual approach from the project itself, then exports an editable SVG and a validated `1280×640` PNG under 1 MB.
 
-**Landing page:** `https://blog.onovich.com/RepoCover/`
+**Website:** `https://blog.onovich.com/RepoCover/`
 
 **Repository:** `https://github.com/onovich/RepoCover`
 
-**Launch image:** `assets/launch-mosaic.png`
+## Asset map
+
+| Channel | File | Size | Use |
+| --- | --- | ---: | --- |
+| X | `assets/social/repocover-x-en.png` | `1280×640` | One native image |
+| LinkedIn link preview | `assets/social/repocover-linkedin-en.png` | `1200×627` | Page Open Graph image or one native image |
+| 中文链接预览 | `assets/social/repocover-linkedin-zh.png` | `1200×627` | 中文页面 Open Graph 图片 |
+| Square English post | `assets/social/repocover-square-en.png` | `1080×1080` | General social post |
+| Portrait English post | `assets/social/repocover-portrait-en.png` | `1080×1350` | Portrait feed post |
+| 方形中文帖 | `assets/social/repocover-square-zh.png` | `1080×1080` | 中文社区配图 |
+| 竖版中文帖 | `assets/social/repocover-portrait-zh.png` | `1080×1350` | 中文竖版信息流 |
+| Product Hunt gallery | `assets/social/repocover-product-hunt-gallery.png` | `1270×760` | First gallery image |
+| Product Hunt thumbnail | `assets/social/repocover-product-hunt-thumbnail.png` | `240×240` | Product thumbnail |
+| Full example mosaic | `assets/social/repocover-launch-landscape.png` | `1600×1000` | Article or longer launch post |
+
+The older `assets/plugin-showcase.png` remains a project asset, but it is not part of this launch set because its internal terminology no longer matches the public product language.
+
+## X
+
+### Post
+
+```text
+RepoCover reads a repository before designing its GitHub Social Preview.
+
+It can recompose useful UI and project visuals, or create a direction when no suitable image exists.
+
+Editable SVG + validated 1280×640 PNG.
+
+https://blog.onovich.com/RepoCover/
+```
+
+Attach `assets/social/repocover-x-en.png`.
+
+**Image description:** A dark blue RepoCover graphic showing six visibly different repository covers for a 3D tool, image utility, desktop companion, audio tool, library, and coding Skill.
+
+## LinkedIn
+
+### Post
+
+```text
+A useful repository can still be easy to overlook when its first impression is only a name and a line of text.
+
+I made RepoCover to give code repositories a clearer visual introduction. It is an open-source AI coding Skill that reads the project before designing its GitHub Social Preview.
+
+The visual approach depends on what the repository already has:
+
+• A working interface can be cleaned up and recomposed.
+• Existing artwork or a main visual can stay recognizable.
+• A project without a suitable image can still get a direction based on what it actually does.
+
+The result is an editable SVG and a validated 1280×640 PNG under 1 MB.
+
+The site includes eight examples from different kinds of projects:
+https://blog.onovich.com/RepoCover/?utm_source=linkedin&utm_medium=social&utm_campaign=launch
+
+I would be interested to see where this approach works well—and where it still misses the character of a project.
+```
+
+For a link-preview post, let LinkedIn use the page's `1200×627` Open Graph image. For a native-image post, attach `assets/social/repocover-linkedin-en.png`; do not try to use both formats in one post.
+
+**Image description:** Six RepoCover examples arranged in two rows. Each repository has a different layout and visual style, from coral 3D geometry to dark audio and workflow interfaces.
+
+## 中文短帖
+
+```text
+很多代码仓库并不缺内容，只是第一眼很难让人知道它有什么意思。
+
+RepoCover 是一个开源 AI 编程 Skill。它会先读懂项目，再为仓库设计 GitHub Social Preview；有界面就整理界面，有主视觉就保留辨识度，没有合适图片时再根据项目本身设计。
+
+最终输出可编辑 SVG，以及精确的 1280×640 PNG。
+
+https://blog.onovich.com/RepoCover/zh/?utm_source=cn_social&utm_medium=social&utm_campaign=launch
+```
+
+配图优先使用 `assets/social/repocover-square-zh.png`；竖版信息流使用 `assets/social/repocover-portrait-zh.png`。
+
+**图片说明：** RepoCover 的 8 个仓库封面案例，包括 3D 工具、图片工具、桌面应用、音频工具、程序库和 Skill；每个项目都有不同的画面。
+
+## 中文长帖
+
+### 标题
+
+```text
+我做了一个先读代码仓库、再生成 GitHub 封面的 Skill
+```
+
+### 正文
+
+```text
+很多程序员更擅长把项目做出来，却不擅长把它介绍清楚。我自己也一样。
+
+于是，就有了 RepoCover。我花了一天时间做的，看上去还不赖，我自己先用了。
+
+它不是先挑一套模板再往里塞内容，而是先读 README、代码、界面和项目素材，再根据实际情况选择视觉方案：
+
+• 项目已经有可运行界面，就保留有辨识度的部分，删除不适合小图分享的杂乱内容，再重新构图。
+• 项目已经有主视觉或品牌形象，就尽量保留它原来的画风和身份。
+• 项目没有合适图片，就根据它真正做的事情推导画面，而不是随便套一个常见主题。
+
+最后会输出可编辑 SVG，以及精确的 1280×640、小于 1 MB 的 PNG，并检查原尺寸和缩略图是否都看得清。
+
+官网和 8 个案例：
+https://blog.onovich.com/RepoCover/zh/?utm_source=cn_community&utm_medium=community&utm_campaign=launch
+
+源码：
+https://github.com/onovich/RepoCover
+
+我更想知道的是：它有没有保留住你的项目原本最有意思的部分？
+```
 
 ## Show HN
 
 ### Title
 
 ```text
-Show HN: RepoCover – A Codex skill that reads a repo before designing its social preview
+Show HN: RepoCover – an AI coding skill that designs GitHub social previews from your repo
 ```
 
-### Body
+### Submission text
 
 ```text
-I have built more than 300 repositories, and most of them received almost no attention. I am much better at building projects than packaging them.
+I am better at building projects than presenting them, and I suspect many developers have the same problem.
 
-So I made RepoCover, an open-source Codex Skill that reads a repository before designing its GitHub Social Preview. It looks at the README, meaningful code, project rules, working UI, and repository-owned visual assets. Good source material is recomposed; distracting UI is removed; when no useful hero image exists, the visual direction is inferred from the project's real objects, actions, relationships, and results.
+I made RepoCover, an open-source AI coding Skill that reads a repository before designing its GitHub Social Preview. The main design question is not simply how to generate an image. It is deciding whether to keep and recompose an existing interface, preserve a recognizable project visual, or start from the project's actual objects and behavior when no suitable image exists.
 
-The output is an editable SVG plus an exact 1280×640 PNG under GitHub's 1 MB limit. It also checks the result at thumbnail size on light and dark surroundings. Image generation and changing GitHub settings remain separate actions.
+The accepted output is an editable SVG plus an exact 1280×640 PNG under 1 MB. The repository contains the complete Skill, deterministic validation scripts, and eight example results from different kinds of projects.
 
-I tested the workflow across games, web tools, desktop apps, libraries, and Codex skills. The repository includes eight public examples and the complete Skill source.
+You can try it from the repository without an account or hosted service:
+https://github.com/onovich/RepoCover
 
-Site: https://blog.onovich.com/RepoCover/?utm_source=hackernews&utm_medium=community&utm_campaign=v0_1_0
-Source: https://github.com/onovich/RepoCover
+Examples and a short Social Preview guide:
+https://blog.onovich.com/RepoCover/?utm_source=hackernews&utm_medium=community&utm_campaign=launch
 
-I would especially value reports from repositories that have unusual visual evidence—or none at all.
+I would especially value feedback on whether the Skill keeps a project's identity when the source interface or artwork is already good.
 ```
 
-## Short English social post
+Use this as a factual draft, then rewrite it in your own posting voice. Do not ask anyone to upvote or coordinate comments.
 
-```text
-I built 300+ repositories that almost no one noticed.
+## Product Hunt
 
-So I made RepoCover: an open-source Codex Skill that reads a repo before designing its GitHub Social Preview.
-
-Real UI and project assets in. Editable SVG + validated 1280×640 PNG out. No shared template.
-
-https://blog.onovich.com/RepoCover/?utm_source=social&utm_medium=post&utm_campaign=v0_1_0
-```
-
-Attach `assets/launch-mosaic.png`.
-
-## Chinese launch post
-
-### Title
-
-```text
-我写了三百多个没人看的仓库，于是做了 RepoCover
-```
-
-### Body
-
-```text
-我知道很多程序员并不擅长包装自己的仓库，我自己也一样：喜欢埋头苦干，直到写出了三百多个几乎无人问津的仓库。
-
-于是，就有了 RepoCover。
-
-它是一个开源 Codex Skill。做封面之前，它会先读 README、关键代码、项目规则、已有界面和仓库自带的视觉素材。原材料本来就好看时，它会保留项目身份并重新构图；截图里有杂乱 UI 时，它会清理；没有截图、Logo 或主形象时，它会从项目真实的对象、动作、关系和结果中推导视觉方向，而不是套模板。
-
-最终会输出可编辑 SVG 和精确的 1280×640 PNG，并检查文件大小、原尺寸和缩略图。生成图片不等于获得上传或修改仓库设置的权限。
-
-我已经用游戏、Web 工具、桌面应用、程序库和 Skill 做过回归测试，仓库里放了 8 个公开案例。
-
-网站：https://blog.onovich.com/RepoCover/zh/?utm_source=cn_community&utm_medium=post&utm_campaign=v0_1_0
-源码：https://github.com/onovich/RepoCover
-
-如果你愿意试，我最想看到两类反馈：项目本身有很漂亮的界面时，它有没有保留住身份；项目完全没有主视觉时，它的纯推断是否诚实而且好看。
-```
-
-配图使用 `assets/launch-mosaic.png`。
-
-## Product Hunt draft
-
-Use this after independent users can install the Skill and reproduce the result.
+Use a personal account that already meets Product Hunt's account-age requirement. The two current official pages disagree on whether the description limit is 260 or 500 characters, so the draft below stays under 260; the live form is the final authority.
 
 **Name:** RepoCover
 
-**Tagline:** Social previews shaped by the repository itself
+**Tagline:** GitHub Social Preview covers shaped by your repository
 
 **Description:**
 
 ```text
-RepoCover is an open-source Codex Skill that reads your repository before designing its GitHub Social Preview. It preserves useful UI and project artwork, removes visual clutter, and can infer a truthful visual direction when no hero image exists. Every accepted result includes an editable SVG and validated 1280×640 PNG under 1 MB.
+RepoCover is an open-source AI coding Skill that reads a repository before designing its GitHub Social Preview. It recomposes useful project visuals or creates a direction when no suitable image exists, then exports an editable SVG and validated 1280×640 PNG.
 ```
 
-**Maker comment:**
+**Main link:** `https://blog.onovich.com/RepoCover/`
 
-```text
-I built RepoCover after realizing that I had written more than 300 repositories and given almost none of them a clear visual introduction. I wanted AI to understand the project before trying to package it. The hardest part was not image generation—it was deciding when to preserve a beautiful source, when to clean up a screenshot, and when a repository genuinely needs a cold-start visual system. I would love to see what happens on projects outside my own collection.
-```
+**Thumbnail:** `assets/social/repocover-product-hunt-thumbnail.png`
 
 Suggested gallery order:
 
-1. `assets/plugin-showcase.png`
-2. `assets/launch-mosaic.png`
-3. `examples/littlepng.png`
-4. `examples/prismdraft.png`
-5. `examples/beat.png`
+1. `assets/social/repocover-product-hunt-gallery.png`
+2. `assets/social/repocover-x-en.png`
+3. `assets/social/repocover-square-en.png`
+4. `assets/social/repocover-portrait-en.png`
+5. `assets/social/repocover-launch-landscape.png`
 
-## OpenAI plugin directory copy
+Product Hunt prohibits AI-generated comments. Write the maker comment and all replies yourself. Useful talking points:
 
-**Short description:** Design social previews from real repository evidence.
+- Developers often build more carefully than they package their work.
+- The difficult part was choosing how much of an existing screenshot or visual to preserve.
+- The Skill was tested against projects with interfaces, main visuals, limited source material, and no suitable image.
+- The most valuable feedback is whether the final cover still feels like the original project.
 
-**Long description:** RepoCover reads a local or remote repository before composing an editable `1280×640` GitHub Social Preview. It preserves useful screenshots and project artwork, infers a truthful visual direction when no hero image exists, and validates the final SVG and PNG.
+Do not ask for votes or offer any incentive for engagement.
+
+## Reddit discussion draft
+
+Choose only a community where this topic is relevant and self-promotion is permitted. Read its sidebar, pinned rules, and posting form first; rewrite the post around that community rather than reposting it unchanged.
+
+### Title
+
+```text
+I tested an AI workflow for GitHub Social Preview images; the hard part was deciding what not to preserve
+```
+
+### Body
+
+```text
+I have been working on an open-source Skill that reads a repository and creates its GitHub Social Preview.
+
+The image generation itself was not the hardest part. A raw screenshot often contains navigation, half-visible controls, or text that works at full size but becomes noise in a small link preview. On the other hand, rebuilding everything can erase the project's original style.
+
+The approach that worked best was to decide among three cases before drawing: recompose a useful product interface, preserve an existing main visual, or derive a new direction only when the repository has no suitable image. The output stays editable as SVG and is also checked as a 1280×640 PNG at thumbnail size.
+
+I documented the workflow and included eight examples here:
+https://github.com/onovich/RepoCover
+
+I am curious how other developers decide when a project screenshot should be cleaned up, redesigned, or left alone.
+```
+
+## OpenAI product listing
+
+**Short description:** Create GitHub Social Preview images from the repository itself.
+
+**Long description:** RepoCover reads a local or remote repository before designing an editable `1280×640` GitHub Social Preview. It can recompose useful interfaces and project visuals or create a direction when no suitable image exists, then validates the final SVG and PNG.
 
 **Website:** `https://blog.onovich.com/RepoCover/`
 
@@ -124,26 +224,21 @@ Suggested gallery order:
 
 **Terms:** `https://blog.onovich.com/RepoCover/terms/`
 
-### Positive invocation tests
-
-1. `Use $repo-cover to inspect this local web project, run the available preview, and create a validated GitHub Social Preview.`
-2. `Use $repo-cover to improve this repository's existing cover while preserving its character artwork and visual identity.`
-3. `Use $repo-cover to create a repository cover even though this library has no screenshot, logo, or hero image.`
-4. `Use $repo-cover to create a GitHub Social Preview for this remote repository and state any evidence limitations.`
-5. `Use $repo-cover to turn this project's SVG brand asset and real workflow into an editable 1280×640 cover.`
-
-### Negative invocation tests
-
-1. `Audit every repository in my GitHub account and decide which ones I should delete.`
-2. `Create a launch presentation and a product demo video for this application.`
-3. `Redesign the application's full user interface and implement the new frontend.`
-
 ## Tracking links
 
-- Show HN: `?utm_source=hackernews&utm_medium=community&utm_campaign=v0_1_0`
-- Product Hunt: `?utm_source=producthunt&utm_medium=launch&utm_campaign=v0_1_0`
-- English social: `?utm_source=social&utm_medium=post&utm_campaign=v0_1_0`
-- Chinese community: `?utm_source=cn_community&utm_medium=post&utm_campaign=v0_1_0`
-- OpenAI directory: `?utm_source=openai_directory&utm_medium=plugin&utm_campaign=v0_1_0`
+- Show HN: `?utm_source=hackernews&utm_medium=community&utm_campaign=launch`
+- Product Hunt: do not use a tracking or shortened main link in the submission; use analytics on later campaign posts instead.
+- X: `?utm_source=x&utm_medium=social&utm_campaign=launch`
+- LinkedIn: `?utm_source=linkedin&utm_medium=social&utm_campaign=launch`
+- Chinese social: `?utm_source=cn_social&utm_medium=social&utm_campaign=launch`
+- Chinese community: `?utm_source=cn_community&utm_medium=community&utm_campaign=launch`
+- OpenAI listing: `?utm_source=openai_directory&utm_medium=listing&utm_campaign=launch`
 
-Do not add artificial star, vote, or like requests. Ask for concrete usage feedback instead.
+## Publishing checklist
+
+- Recheck the destination page and image preview in the real composer.
+- Use the channel-specific image; do not stretch the GitHub cover into every platform ratio.
+- Add the supplied image description or an equivalent alt text.
+- Confirm that every product claim is still visible in the repository or website.
+- Publish one channel at a time and respond to real questions in your own words.
+- Do not coordinate votes, comments, stars, likes, or repeated cross-community promotion.

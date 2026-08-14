@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync } from "node:fs";
-import { rm } from "node:fs/promises";
+import { mkdir, rm } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -24,14 +24,14 @@ try {
 }
 
 const examples = [
-  ["PrismDraft", "3D identity", "prismdraft.png"],
-  ["LittlePNG", "product UI", "littlepng.png"],
-  ["DeskMochi", "character asset", "deskmochi.png"],
-  ["AudioTrim", "real workflow", "audiotrim.png"],
-  ["Beat", "cold start", "beat.png"],
-  ["JustGoal.skill", "semantic topology", "justgoal-skill.png"],
-  ["Knot", "geometric relations", "knot.png"],
-  ["Ping", "bounded reconstruction", "ping.png"],
+  ["PrismDraft", "3D form", "prismdraft.png"],
+  ["LittlePNG", "real interface", "littlepng.png"],
+  ["DeskMochi", "main visual", "deskmochi.png"],
+  ["AudioTrim", "product workflow", "audiotrim.png"],
+  ["Beat", "no existing image", "beat.png"],
+  ["JustGoal.skill", "branching workflow", "justgoal-skill.png"],
+  ["Knot", "project geometry", "knot.png"],
+  ["Ping", "limited source", "ping.png"],
 ];
 
 const width = 1600;
@@ -68,11 +68,11 @@ const background = Buffer.from(`
   <circle cx="1470" cy="120" r="260" fill="#164e68"/>
   <circle cx="1510" cy="50" r="145" fill="#ff7048" fill-opacity="0.17"/>
   <text x="150" y="72" class="eyebrow">CODEX SKILL · GITHUB SOCIAL PREVIEW</text>
-  <text x="62" y="150" class="title">Eight repositories. Eight visual identities.</text>
-  <text x="64" y="194" class="subtitle">RepoCover reads the project before it designs the cover.</text>
+  <text x="62" y="150" class="title">Different repositories. Different covers.</text>
+  <text x="64" y="194" class="subtitle">RepoCover reads the project first, then chooses the visual approach.</text>
   ${cardMarkup}
   <rect x="62" y="801" width="1476" height="112" rx="24" fill="#78c7e3"/>
-  <text x="110" y="850" class="footer">REPOSITORY EVIDENCE → EDITABLE DESIGN → 1280 × 640 VALIDATION</text>
+  <text x="110" y="850" class="footer">READ THE PROJECT → DESIGN THE COVER → EDITABLE SVG + VALIDATED PNG</text>
   <text x="110" y="884" class="footer" opacity="0.72">github.com/onovich/RepoCover</text>
 </svg>`);
 
@@ -102,6 +102,8 @@ composites.push({ input: mark, left: 62, top: 34 });
 if (existsSync(output)) {
   await rm(output);
 }
+
+await mkdir(dirname(output), { recursive: true });
 
 const result = await sharp({
   create: { width, height, channels: 4, background: "#082635" },
