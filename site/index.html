@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RepoCover — AI GitHub Social Preview Generator for Codex</title>
-  <meta name="description" content="RepoCover reads your repository before designing an editable 1280×640 GitHub Social Preview around what makes the project recognizable—not a template.">
+  <meta name="description" content="RepoCover reads your project, then creates a distinctive, editable 1280×640 GitHub Social Preview instead of applying a template.">
   <meta name="theme-color" content="#0c4261">
   <link rel="canonical" href="https://blog.onovich.com/RepoCover/">
   <link rel="alternate" hreflang="en" href="https://blog.onovich.com/RepoCover/">
   <link rel="alternate" hreflang="zh-CN" href="https://blog.onovich.com/RepoCover/zh/">
   <link rel="alternate" hreflang="x-default" href="https://blog.onovich.com/RepoCover/">
   <link rel="icon" href="assets/repo-cover-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css?v=0.1.1">
+  <link rel="stylesheet" href="assets/styles.css?v=0.1.2">
   <meta property="og:type" content="website">
   <meta property="og:title" content="RepoCover — Social previews shaped by the repository itself">
   <meta property="og:description" content="An AI coding Skill that reads the code, docs, UI, and assets before designing a GitHub Social Preview.">
@@ -62,13 +62,12 @@
     <section class="site-shell hero">
       <div class="hero__copy">
         <div class="eyebrow">AI coding Skill · GitHub Social Preview</div>
-        <h1>Your repository already has a <span>visual language.</span></h1>
-        <p class="hero__lead">RepoCover reads the code, docs, UI, and project files before designing an editable 1280×640 cover. It keeps what makes the project recognizable instead of forcing every repository into the same template.</p>
+        <h1>Create a distinctive cover for your <span>code repository.</span></h1>
+        <p class="hero__lead">RepoCover reads the project first, then creates an editable 1280×640 cover instead of applying a template.</p>
         <div class="hero__actions">
           <a class="button button--primary" href="#install">Install RepoCover <span aria-hidden="true">↓</span></a>
           <a class="button button--secondary" href="examples/">Browse real covers</a>
         </div>
-        <p class="hero__note">Recommended for Codex and compatible with other AI coding tools that can run Skills. Local and remote repositories both work; a runnable local preview usually produces the best result.</p>
       </div>
 
       <div class="cover-stage" aria-label="RepoCover output inspection frame">
@@ -89,15 +88,44 @@
     </section>
 
     <div class="site-shell proof-bar" aria-label="RepoCover output guarantees">
-      <div class="proof-bar__item"><strong>1280 × 640</strong><span>GitHub's best-display ratio</span></div>
+      <div class="proof-bar__item"><strong>1280 × 640</strong><span>Best size for GitHub Social Preview</span></div>
       <div class="proof-bar__item"><strong>SVG + PNG</strong><span>Editable source and final raster</span></div>
-      <div class="proof-bar__item"><strong>Under 1 MB</strong><span>Automatically checked</span></div>
-      <div class="proof-bar__item"><strong>Separate actions</strong><span>No upload unless requested</span></div>
+      <div class="proof-bar__item"><strong>Under 1 MB</strong><span>Within GitHub's Social Preview file-size limit</span></div>
     </div>
+
+    <section class="section section--usecases" aria-labelledby="usecases-heading">
+      <div class="site-shell">
+        <div class="usecase-header">
+          <div>
+            <div class="section-kicker">Where the cover appears</div>
+            <h2 class="section-heading" id="usecases-heading">Help people recognize the repository wherever they find it.</h2>
+          </div>
+          <p class="section-intro">One cover can introduce the project on GitHub, in its README, and wherever you share it.</p>
+        </div>
+        <div class="use-grid">
+          <article class="use-card use-card--primary">
+            <span class="use-card__label">Repository settings</span>
+            <h3>GitHub Social Preview</h3>
+            <p>Set the image in the repository Settings. When you share the link on a site that supports link previews, the cover can appear with it.</p>
+            <a href="github-social-preview-guide/">What is Social Preview, and how do I set it? <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="use-card">
+            <span class="use-card__label">Repository page</span>
+            <h3>README</h3>
+            <p>Place the cover near the top of the README so visitors can understand the project before reading the details.</p>
+          </article>
+          <article class="use-card use-card--warm">
+            <span class="use-card__label">Launch and sharing</span>
+            <h3>Posts and promotion</h3>
+            <p>Use it when announcing a project, sharing a release, posting on social media, or presenting your work in a portfolio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section class="section section--ink">
       <div class="site-shell story-grid">
-        <p class="story-quote">Good repositories are easy to <em>overlook</em> when they cannot explain themselves at a glance.</p>
+        <p class="story-quote">Even a good repository is easy to <em>overlook</em> if people cannot understand it at a glance.</p>
         <div class="story-copy">
           <div class="section-kicker">About</div>
           <p>Many programmers are better at building than packaging their work. I am one of them.</p>
@@ -109,33 +137,30 @@
 
     <section class="section section--white">
       <div class="site-shell">
-        <div class="section-kicker">Start with what the project has</div>
-        <h2 class="section-heading">A screenshot can be a reference. It is not always the best cover.</h2>
-        <p class="section-intro">RepoCover keeps the useful parts, removes clutter, and recomposes the scene so it still works as a small link preview.</p>
+        <div class="section-kicker">Visual direction</div>
+        <h2 class="section-heading">Choose the visual approach that fits the project.</h2>
+        <p class="section-intro">RepoCover decides whether the interface, main visual, or existing images are suitable for a cover, then chooses what to preserve, recompose, or redesign.</p>
 
         <div class="mode-choice-note">
-          <div><span class="mode-choice-note__label">Three starting points</span><strong>RepoCover uses whichever one matches your project.</strong></div>
-          <span>No project needs all three.</span>
+          <span class="mode-choice-note__label">Three situations</span>
+          <strong>RepoCover chooses the approach that fits what the project already has.</strong>
         </div>
 
         <div class="mode-grid">
           <article class="mode-card">
             <span class="mode-card__index">A</span>
-            <span class="mode-card__condition">When the project has</span>
-            <h3>A working interface</h3>
+            <h3><span class="mode-card__condition">If the project already has</span> a working product interface</h3>
             <p>Keep the recognizable interaction, crop around what matters, and remove browser chrome, debug clutter, or broken fragments.</p>
           </article>
           <article class="mode-card">
             <span class="mode-card__index">B</span>
-            <span class="mode-card__condition">When the project has</span>
-            <h3>A brand or main visual</h3>
+            <h3><span class="mode-card__condition">If the project already has</span> a brand or main visual</h3>
             <p>Keep its character, dimensionality, and color language, then rebuild the surrounding layout for a clearer cover.</p>
           </article>
           <article class="mode-card">
             <span class="mode-card__index">C</span>
-            <span class="mode-card__condition">When the project has</span>
-            <h3>No suitable image</h3>
-            <p>Build a visual direction from what the project does and how it works, without inventing features or pretending an earlier cover exists.</p>
+            <h3><span class="mode-card__condition">If the project has</span> no suitable image</h3>
+            <p>Build the visual direction from what the project does and how it works, without inventing features.</p>
           </article>
         </div>
       </div>
@@ -151,10 +176,6 @@
           <article class="step-card"><span class="step-card__index">03</span><h3>Recompose</h3><p>Keep the project's recognizable parts, remove clutter, and arrange the cover around one clear idea.</p></article>
           <article class="step-card"><span class="step-card__index">04</span><h3>Check the result</h3><p>The final SVG and PNG are reviewed at full size and as 320×160 thumbnails on both light and dark backgrounds.</p></article>
         </div>
-        <aside class="format-guide">
-          <div><span class="mini-label">New to Social Preview?</span><strong>See where GitHub shows the image, which size works best, and how to set it.</strong></div>
-          <a href="github-social-preview-guide/">Read the GitHub Social Preview guide <span aria-hidden="true">→</span></a>
-        </aside>
       </div>
     </section>
 
@@ -162,8 +183,8 @@
       <div class="site-shell">
         <div class="showcase-header">
           <div>
-            <div class="section-kicker">Made for GitHub Social Preview</div>
-            <h2 class="section-heading">Every repository gets its own look within the same GitHub format.</h2>
+            <div class="section-kicker">Real examples</div>
+            <h2 class="section-heading">Every repository has its own look.</h2>
           </div>
           <a class="button button--secondary" href="examples/">See all eight examples</a>
         </div>
@@ -179,24 +200,23 @@
     <section class="section" id="install">
       <div class="site-shell">
         <div class="section-kicker">Quick start</div>
-        <h2 class="section-heading">Use RepoCover in Codex—or another compatible AI coding tool.</h2>
-        <p class="section-intro">Codex is the recommended option. Other tools that can install and run Skills can use RepoCover too. Open a local repository or provide a remote repository URL.</p>
+        <h2 class="section-heading"><span class="heading-chunk">Install once.</span> <span class="heading-chunk">Use it right away.</span></h2>
+        <p class="section-intro">Open your AI agent—Codex is recommended—and send it these two messages in order.</p>
         <div class="install-panel">
           <div>
-            <div class="mini-label">Install</div>
-            <pre id="install-command" tabindex="0">Install the Skill from https://github.com/onovich/RepoCover.</pre>
+            <div class="mini-label">Message 1 · Install</div>
+            <div class="agent-message" id="install-command" tabindex="0">Install the Skill from https://github.com/onovich/RepoCover.</div>
           </div>
           <button class="copy-button" type="button" data-copy="#install-command" data-copied="Copied">Copy</button>
           <div>
-            <div class="mini-label">Use</div>
-            <pre id="prompt-command" tabindex="0">Use $repo-cover to create a cover for the current project.</pre>
+            <div class="mini-label">Message 2 · Use</div>
+            <div class="agent-message" id="prompt-command" tabindex="0">Use $repo-cover to create a cover for the current project.</div>
           </div>
           <button class="copy-button" type="button" data-copy="#prompt-command" data-copied="Copied">Copy</button>
           <p class="install-note">RepoCover writes an editable SVG and exact 1280×640 PNG by default. It does not edit your README, upload the image, or change repository settings unless you ask separately.</p>
         </div>
         <div class="button-row">
           <a class="button button--primary" href="https://github.com/onovich/RepoCover">Open the GitHub repository</a>
-          <a class="button button--secondary" href="examples/">Browse examples</a>
         </div>
       </div>
     </section>

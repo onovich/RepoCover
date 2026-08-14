@@ -311,6 +311,16 @@ def check_site() -> None:
             "简单说。",
             "Same constraints. No shared template.",
             "相同的规格，不共用一套模板。",
+            "No project needs all three.",
+            "不需要同时具备。",
+            "Three starting points",
+            "三种起点",
+            "Separate actions",
+            "操作分开",
+            "Automatically checked",
+            "自动检查",
+            "pretending an earlier cover exists",
+            "也不假设以前已有封面",
         )
         public_copy = homepage_text + homepage_zh_text + examples_text + examples_zh_text
         for phrase in retired_public_copy:
@@ -318,8 +328,17 @@ def check_site() -> None:
                 fail(f"Site still contains retired public wording: {phrase}")
 
         for required_phrase in (
-            "No project needs all three.",
-            "不需要同时具备。",
+            "Create a distinctive cover for your",
+            "为你的代码仓库，",
+            "有辨识度的封面。",
+            "Best size for GitHub Social Preview",
+            "GitHub Social Preview 最佳显示规格",
+            "What is Social Preview, and how do I set it?",
+            "了解 Social Preview 是什么，以及如何设置",
+            "Three situations",
+            "三种情况",
+            "Open your AI agent—Codex is recommended—and send it these two messages in order.",
+            "打开你的 AI Agent 工具（首选 Codex），把下面两句话依次发给它。",
             "Install the Skill from https://github.com/onovich/RepoCover.",
             "安装 https://github.com/onovich/RepoCover 的 Skill。",
             "Use $repo-cover to create a cover for the current project.",

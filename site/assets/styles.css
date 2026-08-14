@@ -198,6 +198,10 @@ a {
   color: var(--coral);
 }
 
+.hero h1 .hero-chunk--plain {
+  color: inherit;
+}
+
 .hero__lead {
   max-width: 620px;
   margin: 22px 0 0;
@@ -245,13 +249,6 @@ a {
   color: var(--ink);
   background: rgb(255 255 255 / 70%);
   border-color: rgb(16 47 64 / 14%);
-}
-
-.hero__note {
-  max-width: 580px;
-  margin: 16px 0 0;
-  color: var(--muted);
-  font-size: 0.9rem;
 }
 
 .cover-stage {
@@ -346,13 +343,13 @@ a {
 
 .proof-bar {
   display: grid;
-  margin: 0 auto 110px;
+  margin: 0 auto 52px;
   padding: 18px;
   background: rgb(255 255 255 / 66%);
   border: 1px solid rgb(16 47 64 / 12%);
   border-radius: 22px;
   box-shadow: 0 12px 40px rgb(8 38 53 / 6%);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .proof-bar__item {
@@ -396,10 +393,18 @@ a {
   background: var(--coral-soft);
 }
 
+.section--usecases {
+  padding: 42px 0 108px;
+}
+
 .section-heading {
   max-width: 850px;
   margin-top: 18px;
   font-size: clamp(2.7rem, 5vw, 5.1rem);
+}
+
+.heading-chunk {
+  display: inline-block;
 }
 
 .section-intro {
@@ -438,6 +443,97 @@ a {
   margin: 0 0 18px;
 }
 
+.usecase-header {
+  display: grid;
+  align-items: end;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 64px;
+}
+
+.usecase-header .section-heading {
+  max-width: 820px;
+}
+
+.usecase-header .section-intro {
+  margin: 0 0 6px;
+}
+
+.use-grid {
+  display: grid;
+  margin-top: 46px;
+  grid-template-columns: 1.18fr 1fr 1fr;
+  gap: 18px;
+}
+
+.use-card {
+  display: flex;
+  min-height: 284px;
+  padding: 30px;
+  flex-direction: column;
+  color: var(--ink-deep);
+  background: rgb(255 255 255 / 76%);
+  border: 1px solid rgb(16 47 64 / 12%);
+  border-radius: 26px;
+}
+
+.use-card--primary {
+  color: white;
+  background: var(--ink-deep);
+  border-color: var(--ink-deep);
+}
+
+.use-card--warm {
+  background: var(--coral-soft);
+  border-color: rgb(255 112 72 / 18%);
+}
+
+.use-card__label {
+  color: #3b7085;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.use-card--primary .use-card__label {
+  color: var(--sky);
+}
+
+.use-card h3 {
+  margin: 22px 0 10px;
+  font-size: 1.55rem;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.use-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.use-card--primary p {
+  color: #bad0d9;
+}
+
+.use-card a {
+  margin-top: auto;
+  padding-top: 24px;
+  color: #14607b;
+  font-size: 0.86rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.use-card--primary a {
+  color: var(--sky);
+}
+
+.use-card a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .mode-grid,
 .step-grid,
 .faq-grid,
@@ -458,21 +554,14 @@ a {
   margin-top: 42px;
   padding: 18px 20px;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
   color: white;
   background: var(--ink-deep);
   border-radius: 18px;
 }
 
-.mode-choice-note div {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-}
-
-.mode-choice-note__label,
-.mode-card__condition {
+.mode-choice-note__label {
+  flex: 0 0 auto;
   font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
   font-size: 0.7rem;
   font-weight: 850;
@@ -484,14 +573,8 @@ a {
   color: var(--sky);
 }
 
-.mode-choice-note > span {
-  flex: 0 0 auto;
-  padding: 7px 11px;
-  color: var(--ink-deep);
-  background: var(--sky);
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 800;
+.mode-choice-note strong {
+  line-height: 1.35;
 }
 
 .mode-card,
@@ -520,8 +603,8 @@ a {
 }
 
 .mode-card__condition {
-  margin-left: 10px;
   color: #3b7085;
+  font-weight: 650;
 }
 
 .mode-card h3,
@@ -550,44 +633,6 @@ a {
 
 .step-card {
   min-height: 230px;
-}
-
-.format-guide {
-  display: flex;
-  margin-top: 22px;
-  padding: 22px 24px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  color: white;
-  background: var(--ink-deep);
-  border-radius: 20px;
-}
-
-.format-guide .mini-label {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--sky);
-}
-
-.format-guide strong {
-  display: block;
-  max-width: 720px;
-}
-
-.format-guide a {
-  flex: 0 0 auto;
-  color: var(--ink-deep);
-  background: var(--sky);
-  padding: 12px 16px;
-  border-radius: 999px;
-  font-size: 0.84rem;
-  font-weight: 850;
-  text-decoration: none;
-}
-
-.format-guide a:hover {
-  background: white;
 }
 
 .showcase-header {
@@ -646,33 +691,34 @@ a {
   display: grid;
   margin-top: 46px;
   padding: 28px;
-  color: white;
-  background: var(--ink-deep);
+  color: var(--ink-deep);
+  background: var(--sky-soft);
+  border: 1px solid rgb(16 47 64 / 10%);
   border-radius: 28px;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
 }
 
-.install-panel pre {
-  overflow: auto;
+.agent-message {
   margin: 0;
   padding: 18px 20px;
-  color: #dff7ff;
-  background: rgb(0 0 0 / 24%);
-  border: 1px solid rgb(120 199 227 / 20%);
-  border-radius: 16px;
-  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  color: var(--ink-deep);
+  background: white;
+  border: 1px solid rgb(16 47 64 / 12%);
+  border-radius: 18px 18px 18px 6px;
+  box-shadow: 0 8px 24px rgb(8 38 53 / 6%);
+  font-size: 1rem;
+  line-height: 1.5;
   overflow-wrap: anywhere;
   word-break: break-word;
-  white-space: pre-wrap;
 }
 
 .copy-button {
   align-self: start;
   min-height: 44px;
   padding: 0 16px;
-  color: var(--ink-deep);
-  background: var(--sky);
+  color: white;
+  background: var(--ink);
   border: 0;
   border-radius: 999px;
   cursor: pointer;
@@ -683,7 +729,7 @@ a {
 
 .install-note {
   margin: 18px 0 0;
-  color: #adcad5;
+  color: #416473;
   font-size: 0.88rem;
 }
 
@@ -911,6 +957,7 @@ a {
   }
 
   .story-grid,
+  .usecase-header,
   .guide-layout {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -920,21 +967,19 @@ a {
     position: static;
   }
 
+  .use-grid,
   .mode-grid,
   .step-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .mode-choice-note,
-  .format-guide {
-    align-items: flex-start;
-    flex-direction: column;
+  .use-card--primary {
+    grid-column: 1 / -1;
   }
 
-  .mode-choice-note div {
+  .mode-choice-note {
     align-items: flex-start;
     flex-direction: column;
-    gap: 6px;
   }
 }
 
@@ -966,6 +1011,14 @@ a {
     font-size: clamp(3.2rem, 16vw, 4.6rem);
   }
 
+  html[lang="zh-CN"] .hero h1 {
+    font-size: 2.35rem;
+  }
+
+  html[lang="zh-CN"] .hero h1 .hero-chunk {
+    display: inline-block;
+  }
+
   .cover-stage {
     padding: 18px;
     border-radius: 22px;
@@ -976,6 +1029,7 @@ a {
   }
 
   .proof-bar,
+  .use-grid,
   .mode-grid,
   .step-grid,
   .cover-wall,
