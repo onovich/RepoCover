@@ -98,7 +98,7 @@ For skill metadata validation, run the available `skill-creator/scripts/quick_va
 
 ## Recommended next work
 
-1. Complete the coordinated `repo-cover.onovich.com` DNS, Pages, HTTPS, and old-path redirect switch described in [`PROMOTION_ROADMAP.md`](PROMOTION_ROADMAP.md).
+1. Finish GitHub's HTTPS certificate provisioning for `repo-cover.onovich.com`, enable HTTPS enforcement, and recheck the working GitHub-managed old-path redirects described in [`PROMOTION_ROADMAP.md`](PROMOTION_ROADMAP.md).
 2. Resolve the `LitPng` / `LittlePNG` naming mismatch before promoting the next complete case.
 3. Collect independent-user examples before treating the owner-run portfolio result as general external validation.
 4. Record search impressions, repository traffic, and portfolio referrals after the first launch period.

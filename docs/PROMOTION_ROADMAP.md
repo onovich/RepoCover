@@ -18,13 +18,15 @@ The primary path is:
 - English and Simplified Chinese documentation are available.
 - The website and repository identify onovich as the author.
 
-### 2. Independent domain — implementation complete, switch pending
+### 2. Independent domain — deployed, HTTPS provisioning
 
 - Target domain: `https://repo-cover.onovich.com/`
 - The site now reads its public origin from one configuration file.
-- Canonical URLs, `hreflang`, Open Graph URLs, JSON-LD, robots, sitemap, README links, plugin links, and campaign links are prepared for the new domain.
+- Canonical URLs, `hreflang`, Open Graph URLs, JSON-LD, robots, sitemap, README links, plugin links, and campaign links now use the new domain.
 - The build rejects unresolved URL tokens and references to the retired public origin.
-- External DNS, GitHub Pages binding, HTTPS, and permanent redirects still need to be switched together.
+- Cloudflare DNS and the GitHub Pages custom domain are active, and the new build has deployed successfully.
+- Both Cloudflare authoritative nameservers and GitHub's Pages health check now validate the CNAME. GitHub is still provisioning the dedicated HTTPS certificate.
+- GitHub currently returns one-to-one `301` redirects from the old homepage, Chinese page, examples, guide, images, and parameterized URLs while preserving the path and query string.
 
 ### 3. Examples — first complete case ready
 
@@ -44,39 +46,31 @@ Next candidates, in order:
 - English and Chinese launch copy, Show HN copy, community drafts, image descriptions, and UTM links are collected in `docs/LAUNCH_KIT.md`.
 - A follow-up post uses the Research case to promote both RepoCover and another useful onovich project.
 
-## Domain switch handoff
+## Domain switch record
 
-Perform these steps only after the new site build has been pushed successfully.
+The following settings were applied on 2026-08-14.
 
 ### GitHub Pages
 
-1. Open `onovich/RepoCover` → **Settings** → **Pages**.
-2. Set **Custom domain** to `repo-cover.onovich.com` and save.
-3. GitHub Pages uses an Actions workflow here, so no `CNAME` file is required.
+- Custom domain: `repo-cover.onovich.com`
+- Build type: GitHub Actions workflow
+- No repository `CNAME` file is required.
 
 ### Cloudflare DNS
 
-Create this record:
+Active record:
 
 | Type | Name | Target | Proxy status | TTL |
 | --- | --- | --- | --- | --- |
 | CNAME | `repo-cover` | `onovich.github.io` | DNS only during certificate setup | Auto |
 
-Wait until `https://repo-cover.onovich.com/` loads correctly and GitHub allows **Enforce HTTPS**. Then enable HTTPS in GitHub Pages.
+Keep this record DNS-only. When GitHub finishes issuing the certificate, enable HTTPS enforcement and recheck the complete public site.
 
-### Old URL redirect
+### Old URL redirects
 
-The redirect is activated only after the new hostname works.
+No Cloudflare redirect rule is currently necessary. After the Pages custom domain was saved, GitHub began returning permanent redirects from `https://blog.onovich.com/RepoCover/...` to the equivalent path on `repo-cover.onovich.com` and preserved query strings.
 
-1. In Cloudflare DNS, change the existing `blog` web record to **Proxied** so redirect rules can see its traffic.
-2. Open **Rules** → **Redirect Rules** → **Single Redirects**.
-3. Create `RepoCover domain migration` with:
-   - Match type: **Wildcard pattern**
-   - Request URL: `https://blog.onovich.com/RepoCover*`
-   - Target URL: `https://repo-cover.onovich.com${1}`
-   - Status: **301 Permanent Redirect**
-   - Preserve query string: **Enabled**
-4. Check the old homepage, Chinese homepage, examples page, guide, one image, and one URL containing UTM parameters.
+Keep the existing `blog` CNAME DNS-only. Recheck the redirect set after HTTPS enforcement and during later site reviews. Use a Cloudflare wildcard redirect only as a fallback if GitHub stops preserving these paths or queries; proxying the entire blog solely for a redundant redirect would add unnecessary risk.
 
 Keep the redirect for at least one year. Do not remove the old hostname from search tools immediately.
 
