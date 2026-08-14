@@ -6,7 +6,7 @@
     "name": "onovich",
     "url": "https://github.com/onovich"
   },
-  "homepage": "https://onovich.github.io/RepoCover/",
+  "homepage": "https://blog.onovich.com/RepoCover/",
   "repository": "https://github.com/onovich/RepoCover",
   "license": "MIT",
   "keywords": [
@@ -25,9 +25,9 @@
     "capabilities": [
       "Write"
     ],
-    "websiteURL": "https://onovich.github.io/RepoCover/",
-    "privacyPolicyURL": "https://onovich.github.io/RepoCover/privacy/",
-    "termsOfServiceURL": "https://onovich.github.io/RepoCover/terms/",
+    "websiteURL": "https://blog.onovich.com/RepoCover/",
+    "privacyPolicyURL": "https://blog.onovich.com/RepoCover/privacy/",
+    "termsOfServiceURL": "https://blog.onovich.com/RepoCover/terms/",
     "defaultPrompt": [
       "Read this repository and create a validated GitHub Social Preview.",
       "Improve this repository's existing social preview without losing its identity.",

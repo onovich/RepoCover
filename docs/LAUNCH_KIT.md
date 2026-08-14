@@ -8,7 +8,7 @@ This document contains ready-to-use public copy for RepoCover `v0.1.0`. Keep cla
 
 **Short hook:** I built 300+ repositories that almost no one noticed, so I made a Codex Skill that reads a repo before designing its social preview.
 
-**Landing page:** `https://onovich.github.io/RepoCover/`
+**Landing page:** `https://blog.onovich.com/RepoCover/`
 
 **Repository:** `https://github.com/onovich/RepoCover`
 
@@ -33,7 +33,7 @@ The output is an editable SVG plus an exact 1280×640 PNG under GitHub's 1 MB li
 
 I tested the workflow across games, web tools, desktop apps, libraries, and Codex skills. The repository includes eight public examples and the complete Skill source.
 
-Site: https://onovich.github.io/RepoCover/?utm_source=hackernews&utm_medium=community&utm_campaign=v0_1_0
+Site: https://blog.onovich.com/RepoCover/?utm_source=hackernews&utm_medium=community&utm_campaign=v0_1_0
 Source: https://github.com/onovich/RepoCover
 
 I would especially value reports from repositories that have unusual visual evidence—or none at all.
@@ -48,7 +48,7 @@ So I made RepoCover: an open-source Codex Skill that reads a repo before designi
 
 Real UI and project assets in. Editable SVG + validated 1280×640 PNG out. No shared template.
 
-https://onovich.github.io/RepoCover/?utm_source=social&utm_medium=post&utm_campaign=v0_1_0
+https://blog.onovich.com/RepoCover/?utm_source=social&utm_medium=post&utm_campaign=v0_1_0
 ```
 
 Attach `assets/launch-mosaic.png`.
@@ -74,7 +74,7 @@ Attach `assets/launch-mosaic.png`.
 
 我已经用游戏、Web 工具、桌面应用、程序库和 Skill 做过回归测试，仓库里放了 8 个公开案例。
 
-网站：https://onovich.github.io/RepoCover/zh/?utm_source=cn_community&utm_medium=post&utm_campaign=v0_1_0
+网站：https://blog.onovich.com/RepoCover/zh/?utm_source=cn_community&utm_medium=post&utm_campaign=v0_1_0
 源码：https://github.com/onovich/RepoCover
 
 如果你愿意试，我最想看到两类反馈：项目本身有很漂亮的界面时，它有没有保留住身份；项目完全没有主视觉时，它的纯推断是否诚实而且好看。
@@ -116,13 +116,13 @@ Suggested gallery order:
 
 **Long description:** RepoCover reads a local or remote repository before composing an editable `1280×640` GitHub Social Preview. It preserves useful screenshots and project artwork, infers a truthful visual direction when no hero image exists, and validates the final SVG and PNG.
 
-**Website:** `https://onovich.github.io/RepoCover/`
+**Website:** `https://blog.onovich.com/RepoCover/`
 
-**Support:** `https://onovich.github.io/RepoCover/support/`
+**Support:** `https://blog.onovich.com/RepoCover/support/`
 
-**Privacy:** `https://onovich.github.io/RepoCover/privacy/`
+**Privacy:** `https://blog.onovich.com/RepoCover/privacy/`
 
-**Terms:** `https://onovich.github.io/RepoCover/terms/`
+**Terms:** `https://blog.onovich.com/RepoCover/terms/`
 
 ### Positive invocation tests
 

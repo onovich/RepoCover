@@ -250,7 +250,7 @@ def check_site() -> None:
             if relative != "404.html" and not parser.description:
                 fail(f"Site page is missing a meta description: {relative}")
             if relative != "404.html" and not parser.canonical.startswith(
-                "https://onovich.github.io/RepoCover/"
+                "https://blog.onovich.com/RepoCover/"
             ):
                 fail(f"Site page has an invalid canonical URL: {relative}")
             if relative != "404.html":
@@ -280,7 +280,7 @@ def check_site() -> None:
 
         ET.parse(output / "sitemap.xml")
         robots = (output / "robots.txt").read_text(encoding="utf-8")
-        if "https://onovich.github.io/RepoCover/sitemap.xml" not in robots:
+        if "https://blog.onovich.com/RepoCover/sitemap.xml" not in robots:
             fail("robots.txt must advertise the canonical sitemap")
 
         for required in (

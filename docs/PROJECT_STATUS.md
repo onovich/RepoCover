@@ -10,7 +10,7 @@ Last updated: 2026-08-14.
 - Installable skill: `skill/repo-cover`
 - Invocation: `$repo-cover`
 - License: MIT
-- Website: `https://onovich.github.io/RepoCover/`
+- Website: `https://blog.onovich.com/RepoCover/`
 - Skills-only plugin manifest: `.codex-plugin/plugin.json`
 - Initial implementation migrated from the locally tested `github-preview` skill.
 

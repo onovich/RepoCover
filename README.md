@@ -2,7 +2,7 @@
 
 [简体中文](README.zh-CN.md)
 
-[Website](https://onovich.github.io/RepoCover/) · [Examples](https://onovich.github.io/RepoCover/examples/) · [GitHub Social Preview guide](https://onovich.github.io/RepoCover/github-social-preview-guide/)
+[Website](https://blog.onovich.com/RepoCover/) · [Examples](https://blog.onovich.com/RepoCover/examples/) · [GitHub Social Preview guide](https://blog.onovich.com/RepoCover/github-social-preview-guide/)
 
 ## About
 
