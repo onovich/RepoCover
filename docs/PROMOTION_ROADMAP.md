@@ -18,14 +18,14 @@ The primary path is:
 - English and Simplified Chinese documentation are available.
 - The website and repository identify onovich as the author.
 
-### 2. Independent domain — deployed, HTTPS provisioning
+### 2. Independent domain — complete
 
 - Target domain: `https://repo-cover.onovich.com/`
 - The site now reads its public origin from one configuration file.
 - Canonical URLs, `hreflang`, Open Graph URLs, JSON-LD, robots, sitemap, README links, plugin links, and campaign links now use the new domain.
 - The build rejects unresolved URL tokens and references to the retired public origin.
 - Cloudflare DNS and the GitHub Pages custom domain are active, and the new build has deployed successfully.
-- Both Cloudflare authoritative nameservers and GitHub's Pages health check now validate the CNAME. GitHub is still provisioning the dedicated HTTPS certificate.
+- Both Cloudflare authoritative nameservers and GitHub's Pages health check validate the CNAME. GitHub's dedicated certificate is active and HTTPS enforcement is enabled.
 - GitHub currently returns one-to-one `301` redirects from the old homepage, Chinese page, examples, guide, images, and parameterized URLs while preserving the path and query string.
 
 ### 3. Examples — first complete case ready
@@ -64,7 +64,7 @@ Active record:
 | --- | --- | --- | --- | --- |
 | CNAME | `repo-cover` | `onovich.github.io` | DNS only during certificate setup | Auto |
 
-Keep this record DNS-only. When GitHub finishes issuing the certificate, enable HTTPS enforcement and recheck the complete public site.
+Keep this record DNS-only. The complete public site has been checked through HTTPS, including both languages, examples, the guide, the Research image, and the sitemap.
 
 ### Old URL redirects
 
@@ -76,9 +76,9 @@ Keep the redirect for at least one year. Do not remove the old hostname from sea
 
 ## Publishing order
 
-1. Finish the domain switch and live validation.
-2. Update the GitHub repository homepage field to the new domain.
-3. Submit both sitemaps/domain properties to Google Search Console if available.
+1. Domain switch and live validation — complete.
+2. GitHub repository homepage field — updated to the new domain.
+3. Submit the new sitemap/domain property to Google Search Console if available.
 4. Pin RepoCover and Research on the onovich GitHub profile.
 5. Publish the general launch post with the visual-range image.
 6. Publish the Research case follow-up several days later.

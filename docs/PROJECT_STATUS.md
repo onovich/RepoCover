@@ -98,8 +98,8 @@ For skill metadata validation, run the available `skill-creator/scripts/quick_va
 
 ## Recommended next work
 
-1. Finish GitHub's HTTPS certificate provisioning for `repo-cover.onovich.com`, enable HTTPS enforcement, and recheck the working GitHub-managed old-path redirects described in [`PROMOTION_ROADMAP.md`](PROMOTION_ROADMAP.md).
-2. Resolve the `LitPng` / `LittlePNG` naming mismatch before promoting the next complete case.
+1. Submit and monitor the new sitemap in Google Search Console, then review the working GitHub-managed old-path redirects after 7 and 30 days as described in [`PROMOTION_ROADMAP.md`](PROMOTION_ROADMAP.md).
+2. Present `LitPng` as the repository name and `LittlePNG` as the product name, then complete its public metadata and live-product prerequisite before promoting it as the next complete case.
 3. Collect independent-user examples before treating the owner-run portfolio result as general external validation.
 4. Record search impressions, repository traffic, and portfolio referrals after the first launch period.
 5. Use external feedback to prepare a later release instead of adding features for promotion alone.
