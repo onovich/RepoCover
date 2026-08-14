@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://blog.onovich.com/RepoCover/sitemap.xml
+Sitemap: {{SITE_ORIGIN}}/sitemap.xml

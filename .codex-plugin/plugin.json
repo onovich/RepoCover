@@ -6,7 +6,7 @@
     "name": "onovich",
     "url": "https://github.com/onovich"
   },
-  "homepage": "https://blog.onovich.com/RepoCover/",
+  "homepage": "https://repo-cover.onovich.com/",
   "repository": "https://github.com/onovich/RepoCover",
   "license": "MIT",
   "keywords": [
@@ -19,15 +19,15 @@
   "interface": {
     "displayName": "RepoCover",
     "shortDescription": "Design social previews from real repository evidence.",
-    "longDescription": "RepoCover reads a local or remote repository before composing an editable 1280×640 GitHub Social Preview. It preserves useful screenshots and project artwork, infers a truthful visual direction when no hero image exists, and validates the final SVG and PNG.",
+    "longDescription": "RepoCover reads a local or remote repository before composing an editable 1280×640 GitHub Social Preview. It preserves useful screenshots and project artwork, infers a truthful visual direction when no suitable image exists, and validates the final SVG and PNG.",
     "developerName": "onovich",
     "category": "Productivity",
     "capabilities": [
       "Write"
     ],
-    "websiteURL": "https://blog.onovich.com/RepoCover/",
-    "privacyPolicyURL": "https://blog.onovich.com/RepoCover/privacy/",
-    "termsOfServiceURL": "https://blog.onovich.com/RepoCover/terms/",
+    "websiteURL": "https://repo-cover.onovich.com/",
+    "privacyPolicyURL": "https://repo-cover.onovich.com/privacy/",
+    "termsOfServiceURL": "https://repo-cover.onovich.com/terms/",
     "defaultPrompt": [
       "Read this repository and create a validated GitHub Social Preview.",
       "Improve this repository's existing social preview without losing its identity.",

@@ -10,7 +10,7 @@ Last updated: 2026-08-14.
 - Installable skill: `skill/repo-cover`
 - Invocation: `$repo-cover`
 - License: MIT
-- Website: `https://blog.onovich.com/RepoCover/`
+- Website: `https://repo-cover.onovich.com/`
 - Skills-only plugin manifest: `.codex-plugin/plugin.json`
 - Initial implementation migrated from the locally tested `github-preview` skill.
 
@@ -23,13 +23,13 @@ RepoCover now supports:
 - exact editable SVG, `1280×640` PNG under 1 MB, and light/dark `320×160` review sheets;
 - separately authorized GitHub upload and public `og:image` verification.
 
-The public website includes English and Simplified Chinese landing pages, an eight-example gallery, a practical GitHub Social Preview guide, support, privacy, and terms pages. GitHub Pages is deployed through the official Pages Actions workflow. The repository root is also packaged as a skills-only Codex plugin. `skill/repo-cover/` remains the single source of truth; `skills/repo-cover/` is a generated plugin-distribution copy enforced by byte-for-byte checks.
+The public website includes English and Simplified Chinese landing pages, a complete Research case study, eight additional visual examples, a practical GitHub Social Preview guide, support, privacy, and terms pages. GitHub Pages is deployed through the official Pages Actions workflow. The repository root is also packaged as a skills-only Codex plugin. `skill/repo-cover/` remains the single source of truth; `skills/repo-cover/` is a generated plugin-distribution copy enforced by byte-for-byte checks.
 
 ## Validation evidence
 
 ### Portable public examples
 
-Eight checked-in PNGs cover distinct repository and evidence types:
+Research is the first complete public case: a useful repository with a working bilingual report product, a live website, a clear design decision, and a final RepoCover result. Eight additional checked-in PNGs cover distinct repository and evidence types:
 
 - PrismDraft: faceted 3D modeling;
 - LittlePNG: local-first browser image preparation;
@@ -98,9 +98,11 @@ For skill metadata validation, run the available `skill-creator/scripts/quick_va
 
 ## Recommended next work
 
-1. Collect independent-user examples before treating the owner-run portfolio result as general external validation.
-2. Record Pages search impressions and repository traffic after the first launch period.
-3. Use external feedback to prepare a later release instead of adding features for promotion alone.
+1. Complete the coordinated `repo-cover.onovich.com` DNS, Pages, HTTPS, and old-path redirect switch described in [`PROMOTION_ROADMAP.md`](PROMOTION_ROADMAP.md).
+2. Resolve the `LitPng` / `LittlePNG` naming mismatch before promoting the next complete case.
+3. Collect independent-user examples before treating the owner-run portfolio result as general external validation.
+4. Record search impressions, repository traffic, and portfolio referrals after the first launch period.
+5. Use external feedback to prepare a later release instead of adding features for promotion alone.
 
 ## Known limitations
 

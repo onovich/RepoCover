@@ -11,7 +11,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-from build_site import build as build_site
+from build_site import build as build_site, load_site_config
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,6 +44,7 @@ EXPECTED_EXAMPLES = {
     "littlepng.png",
     "ping.png",
     "prismdraft.png",
+    "research.png",
 }
 EXPECTED_SOCIAL_ASSETS = {
     "repocover-launch-landscape.png": (1600, 1000),
@@ -239,6 +240,8 @@ def check_sources() -> None:
 
 
 def check_site() -> None:
+    site_config = load_site_config()
+    canonical_prefix = site_config["origin"] + site_config["base_path"]
     with tempfile.TemporaryDirectory(prefix="repocover-site-") as temporary:
         output = Path(temporary) / "site"
         build_site(output)
@@ -266,7 +269,7 @@ def check_site() -> None:
             if relative != "404.html" and not parser.description:
                 fail(f"Site page is missing a meta description: {relative}")
             if relative != "404.html" and not parser.canonical.startswith(
-                "https://blog.onovich.com/RepoCover/"
+                canonical_prefix
             ):
                 fail(f"Site page has an invalid canonical URL: {relative}")
             if relative != "404.html":
@@ -296,8 +299,17 @@ def check_site() -> None:
 
         ET.parse(output / "sitemap.xml")
         robots = (output / "robots.txt").read_text(encoding="utf-8")
-        if "https://blog.onovich.com/RepoCover/sitemap.xml" not in robots:
+        if canonical_prefix + "sitemap.xml" not in robots:
             fail("robots.txt must advertise the canonical sitemap")
+
+        for path in output.rglob("*"):
+            if not path.is_file() or path.suffix.lower() not in {".html", ".json", ".txt", ".xml"}:
+                continue
+            text = path.read_text(encoding="utf-8")
+            if "{{SITE_" in text:
+                fail(f"Site build contains an unresolved URL token: {path.relative_to(output)}")
+            if "https://blog.onovich.com/RepoCover" in text:
+                fail(f"Site build still refers to the legacy origin: {path.relative_to(output)}")
 
         for required in (
             "assets/app.js",
@@ -429,6 +441,7 @@ def check_site() -> None:
             "JustGoal.skill",
             "Knot",
             "Ping",
+            "Research",
         )
         for relative, text in (
             ("examples/index.html", examples_text),
