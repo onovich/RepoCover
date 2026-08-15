@@ -56,6 +56,7 @@ Create a design ledger from the bundled template before drawing. At minimum reco
 - **Promise, proof, exclude**;
 - evidence mode and claim boundaries;
 - source-material diagnosis or cold-start semantic skeleton;
+- aspect-fit diagnosis whenever source pixels may be embedded;
 - chosen production and interpretation route;
 - material, asset-role, topology, and line decisions;
 - output version, validation, and promotion verdict when applicable.
@@ -78,6 +79,7 @@ Default to `docs/social-preview.svg` and `docs/social-preview.png` unless the re
 - Use system fonts unless the repository ships an appropriate licensed font.
 - Embed local evidence or reproduce it with deterministic SVG primitives; avoid external runtime dependencies.
 - Clip charts, screenshots, repeated marks, and waveforms to their owning regions.
+- Do not `contain` a narrow screenshot inside a wide proof frame when this creates two inert gutters; crop, extend one continuous scene, or extract and recompose the useful material.
 - Preserve an existing cover and create a versioned sibling unless replacement is explicitly requested.
 
 ### 4. Render and validate mechanically

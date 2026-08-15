@@ -5,6 +5,7 @@ Use this route when the repository provides screenshots, runtime captures, logos
 ## Contents
 
 - [Assess the source](#assess-the-source)
+- [Resolve aspect-ratio mismatch](#resolve-aspect-ratio-mismatch)
 - [Set the reconstruction radius](#set-the-reconstruction-radius)
 - [Write the intervention map](#write-the-intervention-map)
 - [Choose an interpretation level](#choose-an-interpretation-level)
@@ -26,6 +27,22 @@ Score each source from `0` to `3` on:
 
 Do not average these into an automatic route. High identity plus high noise calls for selective extraction, not direct screenshot use or total reconstruction.
 
+## Resolve aspect-ratio mismatch
+
+Before embedding source pixels, record the source bounds, target region, proposed fit (`cover`, `contain`, or explicit crop), and the unused area the fit creates.
+
+Reject a centered `contain` fit when a narrow source leaves two similar empty gutters, makes the gameplay or interface too small, or turns the surrounding frame into the dominant shape. Empty bands are not composition. A border, darker fill, or decorative frame does not make them purposeful.
+
+Choose the smallest honest correction:
+
+1. crop to a semantically complete product region and let it fill its owning region;
+2. extend palette, material, lighting, or background only when the result remains one continuous scene;
+3. extract recognizable subjects, UI fragments, topology, or signature shapes and recompose them at useful scale;
+4. use one side as an intentional copy region, rather than leaving matched unused space on both sides;
+5. use a deliberate collage only when separate regions have explicit boundaries and each region proves something useful.
+
+As a practical warning, revisit any `contain` fit that leaves roughly one quarter or more of its owning region unused. The final veto is visual: at `320×160`, the source must read as product proof rather than a small screenshot floating in filler.
+
 ## Set the reconstruction radius
 
 - **Strong source:** preserve the primary subject and visual medium; crop, mask, rebalance, simplify surrounding UI, and add typography.
@@ -39,6 +56,7 @@ The stronger the identity, the smaller the redesign radius. Do not use a screens
 - **Keep:** exact subjects or regions that must remain recognizable.
 - **Remove:** redundant or unattractive regions removed by crop, mask, replacement field, or omission.
 - **Repair:** hierarchy, crop, balance, contrast, spacing, scale, or focal separation defects.
+- **Fit:** source ratio, target ratio, chosen crop or fit, and why no inert gutter remains.
 - **Supplement:** the minimum missing cue required to understand the product, with its evidence source.
 
 If `Remove` and `Supplement` are empty, explain why the source is genuinely cover-ready. Omit any supplement that cannot be traced to code, assets, documentation, another observed state, or an established mechanic.
@@ -61,7 +79,7 @@ The level is a budget, not a target to exhaust. Prefer level 1 or 2 when project
 3. Extract protected subjects, palette, mechanic, signature shapes, useful UI fragments, typographic rhythm, and dimensional cues.
 4. Remove page headings, browser layout, empty regions, secondary controls, and incidental UI that do not prove the promise.
 5. Preserve semantic relationships rather than original pixel positions.
-6. Embed raw pixels only when a faithful, self-contained crop remains the clearest proof; record whether pixels were embedded.
+6. Embed raw pixels only when a faithful, self-contained crop remains the clearest proof; record whether pixels were embedded and how the aspect mismatch was resolved.
 7. When Pages is unavailable, prefer a safe local runtime capture from an existing checkout and record the checkout and validation boundary. Do not present localhost as a durable product URL.
 
 Use masks, cutouts, tonal grading, depth fields, and typography to create a poster composition. Avoid repeatedly placing a left information card beside a rectangular screenshot.
@@ -92,4 +110,4 @@ Do not flatten a 3D or 3D-to-2D project into generic 2D illustration unless the 
 
 Do not replace a distinctive character, game world, diagram topology, or interface language with a cleaner but different-looking product.
 
-Reject or revise the source route when a strong screenshot is used almost whole despite removable noise, a reconstruction adds beauty without fixing a diagnosed deficit, a crop exposes a partial semantic unit, or a source-to-reconstruction boundary still reads as a rendering tear.
+Reject or revise the source route when a strong screenshot is used almost whole despite removable noise, a centered screenshot leaves bilateral filler space, a reconstruction adds beauty without fixing a diagnosed deficit, a crop exposes a partial semantic unit, or a source-to-reconstruction boundary still reads as a rendering tear.

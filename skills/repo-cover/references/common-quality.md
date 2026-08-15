@@ -79,6 +79,7 @@ Reject or revise a design when:
 
 - changing only the name could make it represent an unrelated repository;
 - the product proof is too small or the image reads like a README screenshot;
+- a narrow screenshot is centered with `contain` inside a wider proof frame, leaving two inert gutters or shrinking the product below useful scale;
 - decoration is stronger than the repository name or primary task;
 - text, captions, marks, URLs, or decoration collide or clip;
 - a chart escapes its plot or dominates the cover without evidence;

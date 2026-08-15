@@ -55,6 +55,12 @@ source_route:
         provenance: ""
   interpretation_level: 0 | 1 | 2 | 3
   continuity_model: continuous-scene | isolated-artifact | deliberate-collage
+  aspect_fit:
+    source_bounds: ""
+    target_bounds: ""
+    method: cover | contain | explicit-crop | extracted-recomposition
+    unused_area: ""
+    verdict: pass | fail
   fragment_ledger:
     - source_region: ""
       semantic_unit: ""
